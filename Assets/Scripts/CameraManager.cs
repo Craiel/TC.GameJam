@@ -4,14 +4,15 @@ using System.Collections;
 public class CameraManager : MonoBehaviour {
 
 #region Class Singleton
-	private CameraManager m_Instance = null;
-	public CameraManager Instance
+	private static CameraManager m_Instance = null;
+	public static CameraManager Instance
 	{
 		get
 		{
 			if(m_Instance == null)
 			{
 				m_Instance = new CameraManager();
+				print ("Creating new instance of Camera Manager");
 			}
 			return m_Instance;
 		}
@@ -76,6 +77,7 @@ public class CameraManager : MonoBehaviour {
 	
 	void UpdateBorders()
 	{
+		print ("Updating camera borders..");
 		m_BorderTempVector.Set(0,0,Camera.main.transform.position.z);
 		m_LeftBorder = Camera.main.ViewportToWorldPoint(m_BorderTempVector).x;
 		m_TopBorder = Camera.main.ViewportToWorldPoint(m_BorderTempVector).y;
@@ -83,6 +85,7 @@ public class CameraManager : MonoBehaviour {
 		m_BorderTempVector.Set(1,1,Camera.main.transform.position.z);
 		m_RightBorder = Camera.main.ViewportToWorldPoint(m_BorderTempVector).x;
 		m_BottomBorder = Camera.main.ViewportToWorldPoint(m_BorderTempVector).y;		
+		print ("Borders:" +m_LeftBorder+", "+m_RightBorder+", "+m_TopBorder+", "+m_BottomBorder);
 	}
 		
 }
