@@ -4,8 +4,8 @@ using System.Collections;
 public class CameraManager : MonoBehaviour {
 
 #region Class Singleton
-	private CameraManager m_Instance = null;
-	public CameraManager Instance
+	private static CameraManager m_Instance = null;
+	public static CameraManager Instance
 	{
 		get
 		{
