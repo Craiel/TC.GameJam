@@ -9,6 +9,10 @@ public class LevelManager : MonoBehaviour, IObserver {
 	public List<LevelModule> m_LevelModules = null;
 	public int m_NumVisibleModules = 3; 
 	
+	public bool m_IsScrolling = false;
+	public float m_ScrollSpeedPerSecond = 5.0f;
+	Vector3 m_VelocityVector = Vector3.zero;
+	
 	private List<LevelModule> m_SpawnedLevelModules = new List<LevelModule>();	
 	
 	// Use this for initialization
@@ -52,6 +56,15 @@ public class LevelManager : MonoBehaviour, IObserver {
 				newModule.RegisterObserver(this);
 			}
 			
+		}
+	}
+	
+	void Update()
+	{
+		if(m_IsScrolling)
+		{
+			m_VelocityVector.Set(0,Time.deltaTime*m_ScrollSpeedPerSecond, 0);
+			m_LevelRootNode.transform.localPosition += m_VelocityVector;
 		}
 	}
 }
