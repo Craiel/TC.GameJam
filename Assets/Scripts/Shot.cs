@@ -5,8 +5,17 @@ public class Shot : ActiveEntity
 {
 	private Vector3 direction;
 	private Vector3? startPos;
+	
 	private float speed;
 	private float lifeTime;
+	
+	private ShotSource source;
+	
+	public enum ShotSource
+	{
+		Friend,
+		Foe
+	}
 		
 	public float LifeTime
 	{
@@ -21,6 +30,14 @@ public class Shot : ActiveEntity
 		get
 		{
 			return this.speed;
+		}
+	}
+	
+	public ShotSource Source
+	{
+		get
+		{
+			return this.source;
 		}
 	}
 	

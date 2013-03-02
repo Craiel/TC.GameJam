@@ -10,8 +10,8 @@ public class Player : ShipBase
 	{	
 		this.Health = this.StartingHealth;
 		
-		this.AddWeapon(new Weapon{Name="Test Gun", Cooldown = 0.2f});
-		this.AddWeapon(new Weapon{Name="SlowMoFo", Cooldown = 4.0f});
+		this.AddWeapon(new WeaponDumbFire{Name="Test Gun", Cooldown = 0.2f});
+		this.AddWeapon(new WeaponDumbFire{Name="SlowMoFo", Cooldown = 4.0f});
 	}
 	
 	public void Update()
@@ -21,16 +21,6 @@ public class Player : ShipBase
 		if(Input.GetMouseButton(0))
 		{
 			this.Fire();
-		}
-		
-		if(Input.GetKeyDown(KeyCode.Space))
-		{
-			foreach(Weapon weapon in this.weapons.Keys)
-			{
-				// Test only for first weapon
-				weapon.AlternateFireMode = !weapon.AlternateFireMode;
-				break;
-			}
 		}
 	}
 }

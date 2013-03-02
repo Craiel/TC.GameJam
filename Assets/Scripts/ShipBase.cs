@@ -72,7 +72,7 @@ public class ShipBase : ActiveEntity
 			}
 			
 			print ("Firing Weapon: "+weapon.Name);
-			weapon.Fire(transform.position);
+			weapon.Fire();
 			this.weapons[weapon] = weapon.Cooldown;
 		}
 	}
@@ -118,7 +118,8 @@ public class ShipBase : ActiveEntity
 		IList<Weapon> weapons = new List<Weapon>(this.weapons.Keys);
 		foreach(Weapon weapon in weapons)
 		{
-			this.weapons[weapon] -= Time.deltaTime;
+			weapon.Origin = transform.position;
+			this.weapons[weapon] -= Time.deltaTime;			
 		}
 	}
 	

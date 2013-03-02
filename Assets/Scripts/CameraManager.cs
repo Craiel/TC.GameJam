@@ -4,24 +4,15 @@ using System.Collections;
 public class CameraManager : MonoBehaviour {
 	
 #region Class Singleton
-<<<<<<< HEAD
-
-   	private static CameraManager m_Instance= null;
-=======
 	private static CameraManager m_Instance = null;
->>>>>>> aaa5255fc6c9b4cc6a86ee9c605bd3aaa1e4cb2e
 	public static CameraManager Instance
 	{
 		get
 		{
 			if(m_Instance == null)
 			{
-<<<<<<< HEAD
 				m_Instance = (new GameObject("CameraManager")).AddComponent<CameraManager>();
-=======
-				m_Instance = new CameraManager();
 				print ("Creating new instance of Camera Manager");
->>>>>>> aaa5255fc6c9b4cc6a86ee9c605bd3aaa1e4cb2e
 			}
 			return m_Instance;
 		}
