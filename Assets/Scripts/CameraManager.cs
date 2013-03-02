@@ -2,24 +2,21 @@ using UnityEngine;
 using System.Collections;
 
 public class CameraManager : MonoBehaviour {
-
+	
 #region Class Singleton
-	private static CameraManager m_Instance = null;
+
+   	private static CameraManager m_Instance= null;
 	public static CameraManager Instance
 	{
 		get
 		{
 			if(m_Instance == null)
 			{
-				m_Instance = new CameraManager();
+				m_Instance = (new GameObject("CameraManager")).AddComponent<CameraManager>();
 			}
 			return m_Instance;
 		}
 	}
-	
-		public CameraManager(){}
-	
-	~CameraManager(){}
 #endregion
 
 #region Properties
