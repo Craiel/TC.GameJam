@@ -5,18 +5,22 @@ using System.Collections.Generic;
 public class GameControlTest : MonoBehaviour 
 {
 	private const int TestEnemyCount = 30;
-	private const int MaxShots = 100;
+	private const int MaxShots = 500;
 	
 	private GameObject[] testEnemies = new GameObject[TestEnemyCount];
 	private IList<GameObject> shots = new List<GameObject>();
-	
+		
 	public GameObject Player;
 	public GameObject Gui;
+	
+	public GameObject ShotHolder;
+	public GameObject EnemyHolder;
 	
 	private int score;
 	
 	public void AddShot(GameObject newShot)
 	{
+		newShot.transform.parent = this.ShotHolder.transform;
 		if(this.shots.Count > MaxShots)
 		{
 			var oldShot = this.shots[0];
@@ -29,10 +33,11 @@ public class GameControlTest : MonoBehaviour
 		
 	// Use this for initialization
 	void Start () 
-	{	
+	{			
 		for(int i=0;i<TestEnemyCount;i++)
 		{
 			this.testEnemies[i] = GameObject.CreatePrimitive(PrimitiveType.Cube);
+			this.testEnemies[i].transform.parent = this.EnemyHolder.transform;
 			this.testEnemies[i].AddComponent<Enemy>();
 			this.testEnemies[i].AddComponent<BoxCollider>();
 			this.testEnemies[i].GetComponent<BoxCollider>().isTrigger = true;
@@ -40,8 +45,14 @@ public class GameControlTest : MonoBehaviour
 			this.testEnemies[i].GetComponent<Rigidbody>().useGravity = false;
 			this.testEnemies[i].GetComponent<Rigidbody>().isKinematic = true;
 			this.testEnemies[i].GetComponent<Enemy>().CollisionDamage = Random.value * 5;
-			this.testEnemies[i].GetComponent<Enemy>().CollisionInterval = 0.1f;
+			this.testEnemies[i].GetComponent<Enemy>().CollisionInterval = 0.1f;			
 			this.testEnemies[i].name = "Enemy "+i;
+			
+			var weapon = WeaponSingleDumbFire.Create();
+			weapon.GetComponent<Weapon>().Cooldown = 1f;
+			weapon.GetComponent<Weapon>().Source = ShotSource.Foe;
+			this.testEnemies[i].GetComponent<Enemy>().AddWeapon(weapon);
+			
 			this.ResetEnemy(i);
 		}
 	}
@@ -60,6 +71,12 @@ public class GameControlTest : MonoBehaviour
 			if(current.LifeTime <= 0 || current.IsDead)
 			{
 				this.ResetEnemy(i);
+				continue;
+			}
+			
+			if(Random.value < 0.2f)
+			{
+				current.Fire(true, (this.Player.transform.position - current.transform.position).normalized);
 			}
 		}
 		
@@ -83,6 +100,7 @@ public class GameControlTest : MonoBehaviour
 		float pos = (Random.value -0.5f) * 36;
 		print ("Spawning new enemy at "+pos);
 		this.testEnemies[slot].GetComponent<Enemy>().Initialize(new Vector3(pos, 10, 0), Random.value * 15.0f, 3.0f + Random.value * 4.0f);
+		this.testEnemies[slot].GetComponent<Enemy>().SetCollision(5.0f, 0.2f);
 		this.testEnemies[slot].GetComponent<Enemy>().Health = 1.0f + Random.value * 10.0f;
 	}
 }

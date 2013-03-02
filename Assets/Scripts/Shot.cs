@@ -1,6 +1,12 @@
 using UnityEngine;
 using System.Collections;
 
+public enum ShotSource
+{
+	Friend,
+	Foe
+}
+
 public class Shot : ActiveEntity 
 {
 	private Vector3 direction;
@@ -9,13 +15,6 @@ public class Shot : ActiveEntity
 	private float speed;
 	private float lifeTime;
 	
-	private ShotSource source;
-	
-	public enum ShotSource
-	{
-		Friend,
-		Foe
-	}
 		
 	public float LifeTime
 	{
@@ -33,13 +32,7 @@ public class Shot : ActiveEntity
 		}
 	}
 	
-	public ShotSource Source
-	{
-		get
-		{
-			return this.source;
-		}
-	}
+	public ShotSource Source;
 	
 	void Update()
 	{		
@@ -61,12 +54,23 @@ public class Shot : ActiveEntity
 		this.speed = speed;
 	}
 	
-	void OnTriggerExit(Collider collider)
+	public static GameObject Create(GameObject resource)
 	{
-		ActiveEntity component = collider.gameObject.GetComponent(typeof(ActiveEntity)) as ActiveEntity;
-		if(component != null && component.GetType() != this.GetType() && component.GetType() != typeof(Player))
-		{
-			this.lifeTime = 0;
-		}
+		var shot = new GameObject("Shot");
+		shot.AddComponent<Shot>();
+		shot.AddComponent<BoxCollider>();
+		shot.GetComponent<BoxCollider>().isTrigger = true;
+		shot.GetComponent<Shot>().CollisionEnabled = false;
+		shot.name = "Shot";
+		
+		GameObject resourceInstance = Instantiate(resource) as GameObject;
+		resourceInstance.transform.parent = shot.transform;
+		
+		return shot;
+	}
+	
+	public void Terminate()
+	{
+		this.lifeTime = 0;
 	}
 }

@@ -10,8 +10,12 @@ public class Player : ShipBase
 	{	
 		this.Health = this.StartingHealth;
 		
-		this.AddWeapon(new WeaponDumbFire{Name="Test Gun", Cooldown = 0.2f});
-		this.AddWeapon(new WeaponDumbFire{Name="SlowMoFo", Cooldown = 4.0f});
+		var weapon = WeaponSpreadDumbFire.Create();
+		weapon.name = "Test Gun";
+		weapon.GetComponent<Weapon>().Source = ShotSource.Friend;
+		weapon.GetComponent<Weapon>().Cooldown = 0.2f;
+		
+		this.AddWeapon(weapon);
 	}
 	
 	public void Update()
@@ -22,5 +26,10 @@ public class Player : ShipBase
 		{
 			this.Fire();
 		}
+	}
+	
+	protected override bool AcceptShotSource (ShotSource source)
+	{
+		return source != ShotSource.Friend;	
 	}
 }

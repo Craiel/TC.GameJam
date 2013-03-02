@@ -1,14 +1,15 @@
 using UnityEngine;
 using System.Collections;
 
-public abstract class Weapon
+public class Weapon : MonoBehaviour 
 {
-	public string Name;
-	
 	public float Cooldown;
 		
-	public Vector3 Origin;
 	public Vector3 Target = Vector3.up;
 	
-	public abstract void Fire();
+	public ShotSource Source;
+	
+	public virtual void Fire()
+	{
+	}
 }

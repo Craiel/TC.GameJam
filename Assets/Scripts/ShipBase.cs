@@ -7,7 +7,7 @@ public class ShipBase : ActiveEntity
 	public delegate void NotifyDelegate();
 	
 	private readonly IDictionary<Collider, float> collisionTrigger = new Dictionary<Collider, float>();	
-	protected readonly IDictionary<Weapon, float> weapons = new Dictionary<Weapon, float>();
+	protected readonly IDictionary<GameObject, float> weapons = new Dictionary<GameObject, float>();
 	
 	private float health;
 	private float maxHealth;
@@ -51,29 +51,34 @@ public class ShipBase : ActiveEntity
 		}
 	}
 	
-	public void AddWeapon(Weapon weapon)
+	public void AddWeapon(GameObject weapon)
 	{
+		weapon.transform.parent = this.transform;
 		this.weapons.Add(weapon, 0);
 	}
 	
-	public void Fire(bool respectCooldown = true)
+	public void Fire(bool respectCooldown = true, Vector3? target = null)
 	{
 		if(this.weapons.Count == 0 || this.isDead)
 		{
 			return;
 		}
 		
-		IList<Weapon> weapons = new List<Weapon>(this.weapons.Keys);
-		foreach(Weapon weapon in weapons)
+		IList<GameObject> weapons = new List<GameObject>(this.weapons.Keys);
+		foreach(GameObject weapon in weapons)
 		{
 			if(this.weapons[weapon] > 0 && respectCooldown)
 			{
 				continue;
 			}
 			
-			print ("Firing Weapon: "+weapon.Name);
-			weapon.Fire();
-			this.weapons[weapon] = weapon.Cooldown;
+			if(target != null)
+			{
+				weapon.GetComponent<Weapon>().Target = (Vector3)target;
+			}
+			
+			weapon.GetComponent<Weapon>().Fire();
+			this.weapons[weapon] = weapon.GetComponent<Weapon>().Cooldown;
 		}
 	}
 	
@@ -83,9 +88,7 @@ public class ShipBase : ActiveEntity
 		{
 			return;
 		}
-		
-		print ("Taking "+damage+" from "+source);
-		
+				
 		// Todo: Add fancy damage calculations here
 		this.health -= damage;
 		if(this.health <= 0)
@@ -115,10 +118,9 @@ public class ShipBase : ActiveEntity
 			this.collisionTrigger[collider] -= Time.deltaTime;
 		}
 		
-		IList<Weapon> weapons = new List<Weapon>(this.weapons.Keys);
-		foreach(Weapon weapon in weapons)
+		IList<GameObject> weapons = new List<GameObject>(this.weapons.Keys);
+		foreach(GameObject weapon in weapons)
 		{
-			weapon.Origin = transform.position;
 			this.weapons[weapon] -= Time.deltaTime;			
 		}
 	}
@@ -141,21 +143,40 @@ public class ShipBase : ActiveEntity
 		ActiveEntity component = collider.gameObject.GetComponent(typeof(ActiveEntity)) as ActiveEntity;
 		if(component != null && component.GetType() != this.GetType())
 		{
+			if(!component.CollisionEnabled)
+			{
+				return;
+			}
+			
 			if(!this.collisionTrigger.ContainsKey(collider))
 			{
 				this.collisionTrigger.Add(collider, component.CollisionInterval);
 			}
 			
-			if(this.collisionTrigger[collider] <= 0)
-			{
-				this.collisionTrigger[collider] = component.CollisionInterval;				
-			} else
+			if(this.collisionTrigger[collider] > 0)
 			{
 				return;
 			}
 			
-			print("Taking collision damage of "+component.CollisionDamage);
+			if(component.GetType() == typeof(Shot))
+			{
+				if(!this.AcceptShotSource(((Shot)component).Source))
+				{
+					return;
+				} 
+				else
+				{
+					((Shot)component).Terminate();
+				}
+			}
+			
+			this.collisionTrigger[collider] = component.CollisionInterval;
 			this.TakeDamage(component.CollisionDamage, collider.gameObject);
 		}
+	}
+	
+	protected virtual bool AcceptShotSource(ShotSource source)
+	{
+		return true;
 	}
 }

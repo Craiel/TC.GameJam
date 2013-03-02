@@ -7,7 +7,7 @@ public class Enemy : ShipBase
 	private float speed;
 	
 	private Vector3? startPos;
-	
+		
 	public float LifeTime
 	{
 		get
@@ -43,5 +43,10 @@ public class Enemy : ShipBase
 		this.startPos = position;
 		this.lifeTime = lifeTime;
 		this.speed = speed;
+	}
+	
+	protected override bool AcceptShotSource (ShotSource source)
+	{
+		return source == ShotSource.Friend;
 	}
 }
