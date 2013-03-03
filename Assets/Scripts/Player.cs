@@ -10,10 +10,14 @@ public class Player : ShipBase
 	{	
 		this.Health = this.StartingHealth;
 		
-		var weapon = WeaponSpreadDumbFire.Create();
+		/*var weapon = WeaponSpreadDumbFire.Create();
 		weapon.name = "Test Gun";
 		weapon.GetComponent<Weapon>().Source = ShotSource.Friend;
-		weapon.GetComponent<Weapon>().Cooldown = 0.2f;
+		weapon.GetComponent<Weapon>().Cooldown = 0.2f;*/
+		
+		var weapon = WeaponGravity.Create();
+		weapon.name = "Gravity Gun";
+		weapon.GetComponent<Weapon>().Source = ShotSource.Friend;
 		
 		this.AddWeapon(weapon);
 	}
@@ -25,6 +29,22 @@ public class Player : ShipBase
 		if(Input.GetMouseButton(0))
 		{
 			this.Fire();
+		}
+		else
+		{
+			this.Disable();
+		}
+		
+		float wheel = Input.GetAxis("Mouse ScrollWheel");
+		if(wheel < 0.0f || wheel > 0.0f)
+		{
+			foreach(GameObject weapon in this.weapons.Keys)
+			{
+				if(weapon.GetComponent<WeaponGravity>() != null)
+				{
+					weapon.GetComponent<WeaponGravity>().ChangeRadius(wheel * 10.0f);
+				}
+			}
 		}
 	}
 	

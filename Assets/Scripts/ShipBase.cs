@@ -82,6 +82,20 @@ public class ShipBase : ActiveEntity
 		}
 	}
 	
+	public virtual void Disable()
+	{
+		if(this.weapons.Count == 0 || this.isDead)
+		{
+			return;
+		}
+		
+		IList<GameObject> weapons = new List<GameObject>(this.weapons.Keys);
+		foreach(GameObject weapon in weapons)
+		{
+			weapon.GetComponent<Weapon>().Disable();
+		}
+	}
+	
 	public void TakeDamage(float damage, GameObject source = null)
 	{
 		if(this.isDead)
@@ -93,7 +107,6 @@ public class ShipBase : ActiveEntity
 		this.health -= damage;
 		if(this.health <= 0)
 		{
-			print("Dying..");
 			this.isDead = true;
 			if(this.OnDying != null)
 			{

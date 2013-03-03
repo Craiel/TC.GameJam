@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class GameControlTest : MonoBehaviour 
 {
-	private const int TestEnemyCount = 30;
+	private const int TestEnemyCount = 15;
 	private const int MaxShots = 500;
 	
 	private GameObject[] testEnemies = new GameObject[TestEnemyCount];
@@ -28,7 +28,34 @@ public class GameControlTest : MonoBehaviour
 			DestroyObject(oldShot);
 		}
 		
+		newShot.GetComponent<Shot>().IsActive = true;
 		this.shots.Add(newShot);
+	}
+	
+	public IList<GameObject> GetShotsWithin(Vector3 center, float radius)
+	{
+		print (center + " -> "+radius);
+		IList<GameObject> result = new List<GameObject>();
+		IList<GameObject> list = new List<GameObject>(this.shots);
+		for(int i=0;i<list.Count;i++)
+		{
+			if(list[i].GetComponent<Shot>().LifeTime <= 0 || list[i].GetComponent<Shot>().Source == ShotSource.Friend)
+			{
+				continue;
+			}
+		
+			if((list[i].collider.bounds.center - center).magnitude < radius)
+			{
+				result.Add(list[i]);
+			}
+			
+			/*if(bounds.Contains(list[i].collider.bounds.center) || bounds.Intersects(list[i].collider.bounds))
+			{
+				result.Add(list[i]);
+			}*/
+		}
+		
+		return result;
 	}
 		
 	// Use this for initialization
@@ -97,8 +124,7 @@ public class GameControlTest : MonoBehaviour
 	
 	private void ResetEnemy(int slot)
 	{
-		float pos = (Random.value -0.5f) * 36;
-		print ("Spawning new enemy at "+pos);
+		float pos = (Random.value -0.5f) * 24;
 		this.testEnemies[slot].GetComponent<Enemy>().Initialize(new Vector3(pos, 10, 0), Random.value * 15.0f, 3.0f + Random.value * 4.0f);
 		this.testEnemies[slot].GetComponent<Enemy>().SetCollision(5.0f, 0.2f);
 		this.testEnemies[slot].GetComponent<Enemy>().Health = 1.0f + Random.value * 10.0f;

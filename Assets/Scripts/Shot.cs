@@ -13,8 +13,7 @@ public class Shot : ActiveEntity
 	private Vector3? startPos;
 	
 	private float speed;
-	private float lifeTime;
-	
+	private float lifeTime;	
 		
 	public float LifeTime
 	{
@@ -32,10 +31,27 @@ public class Shot : ActiveEntity
 		}
 	}
 	
+	public bool IsActive;
+	
 	public ShotSource Source;
+	
+	public void ChangeTarget(Vector3 target)
+	{
+		this.direction = (target - this.transform.position).normalized;
+	}
+	
+	public void ChangeSpeed(float diff)
+	{
+		this.speed += diff;
+	}
 	
 	void Update()
 	{		
+		if(!this.IsActive)
+		{
+			return;
+		}
+		
 		if(this.startPos != null)
 		{
 			this.transform.position = (Vector3)this.startPos;

@@ -9,7 +9,7 @@ public class WeaponSpreadDumbFire : Weapon
 	
 	void Start()
 	{
-		this.resource = Resources.Load("DumbFire") as GameObject;
+		this.resource = Resources.Load("DumbFireFriendly") as GameObject;
 	}
 	
 	public override void Fire ()
