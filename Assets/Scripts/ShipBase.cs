@@ -58,7 +58,7 @@ public class ShipBase : ActiveEntity
 		this.weapons.Add(weapon, 0);
 	}
 	
-	public void Fire(bool respectCooldown = true, Vector3? target = null)
+	public void Fire(bool respectCooldown = true, Vector3? target = null, bool alternate = false)
 	{
 		if(this.weapons.Count == 0 || this.isDead)
 		{
@@ -78,7 +78,14 @@ public class ShipBase : ActiveEntity
 				weapon.GetComponent<Weapon>().Target = (Vector3)target;
 			}
 			
-			weapon.GetComponent<Weapon>().Fire();
+			if(alternate)
+			{
+				weapon.GetComponent<Weapon>().AlternateFire();
+			} else
+			{
+				weapon.GetComponent<Weapon>().Fire();
+			}
+			
 			this.weapons[weapon] = weapon.GetComponent<Weapon>().Cooldown;
 		}
 	}

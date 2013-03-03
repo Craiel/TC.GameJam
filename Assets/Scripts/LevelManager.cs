@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour, IObserver {
 			{
 				LevelModule newModule = Instantiate(m_LevelModules[Random.Range(0, m_LevelModules.Count)]) as LevelModule;
 				newModule.transform.parent = m_LevelRootNode.transform;
-				newModule.transform.localRotation = Quaternion.identity;
+				//newModule.transform.localRotation = Quaternion.identity;
 				if(m_SpawnedLevelModules.Count > 0)
 				{
 					newModule.transform.localPosition = new Vector3(0,0, m_SpawnedLevelModules[m_SpawnedLevelModules.Count-1].transform.localPosition.z + (m_SpawnedLevelModules[m_SpawnedLevelModules.Count-1].m_PieceLength + newModule.m_PieceLength)/2.0f);

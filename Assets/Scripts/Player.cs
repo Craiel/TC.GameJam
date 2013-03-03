@@ -30,7 +30,12 @@ public class Player : ShipBase
 			this.Disable();
 		}
 		
-		float wheel = Input.GetAxis("Mouse ScrollWheel");
+		if(Input.GetMouseButton(1))
+		{
+			this.Fire(true, null, true);
+		}
+		
+		/*float wheel = Input.GetAxis("Mouse ScrollWheel");
 		if(wheel < 0.0f || wheel > 0.0f)
 		{
 			foreach(GameObject weapon in this.weapons.Keys)
@@ -40,7 +45,7 @@ public class Player : ShipBase
 					weapon.GetComponent<WeaponGravity>().ChangeRadius(wheel * 75.0f);
 				}
 			}
-		}
+		}*/
 	}
 	
 	protected override bool AcceptShotSource (ShotSource source)

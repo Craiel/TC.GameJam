@@ -13,6 +13,10 @@ public class Weapon : MonoBehaviour
 	{
 	}
 	
+	public virtual void AlternateFire()
+	{
+	}
+	
 	public virtual void Disable()
 	{
 	}
