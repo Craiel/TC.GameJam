@@ -60,7 +60,8 @@ public class Shot : ActiveEntity
 		}
 		
 		this.lifeTime -= Time.deltaTime;
-		this.transform.Translate(this.direction * this.speed * Time.deltaTime);
+		//this.transform.Translate(this.direction * this.speed * Time.deltaTime);
+		this.transform.localPosition += direction*speed*Time.deltaTime;
 	}
 	
 	public void Initialize(Vector3 direction, Vector3 position, float lifeTime, float speed)

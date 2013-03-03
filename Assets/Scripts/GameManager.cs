@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour 
 {
 	public GameObject m_Ship = null;
+	public GameObject m_EnemyShip = null;
 	public Vector3 m_ShipSpawnPosition = Vector3.zero;
 	
 	public Rect m_LivesRect;
@@ -48,10 +50,46 @@ public class GameManager : MonoBehaviour
 	private float m_EntryDuration = 3.0f;
 	private Vector3 m_EntryStartPoint = Vector3.zero;
 	
+	//Enemy Spawning
+	public GameObject ShotHolder;
+	public GameObject EnemyHolder;
+	
+	private const int ENEMY_COUNT = 10;
+	private const int MAX_SHOTS = 500;
+	
+	private GameObject[] m_Enemies = new GameObject[ENEMY_COUNT];
+	private List<GameObject> shots = new List<GameObject>();	
+		
 	void Start()
 	{
 		m_Player = m_Ship.GetComponent<Player>();
 		m_Player.OnDying += OnPlayerDying;
+	}
+	
+	private void InitEnemies()
+	{
+		//PATRICK
+		for(int i=0;i<ENEMY_COUNT;i++)
+		{
+			this.m_Enemies[i] = Instantiate(m_EnemyShip) as GameObject;
+			this.m_Enemies[i].transform.parent = this.EnemyHolder.transform;
+			this.m_Enemies[i].AddComponent<Enemy>();
+			//this.m_Enemies[i].AddComponent<BoxCollider>();
+			this.m_Enemies[i].GetComponent<BoxCollider>().isTrigger = true;
+			this.m_Enemies[i].AddComponent<Rigidbody>();
+			this.m_Enemies[i].GetComponent<Rigidbody>().useGravity = false;
+			this.m_Enemies[i].GetComponent<Rigidbody>().isKinematic = true;
+			this.m_Enemies[i].GetComponent<Enemy>().CollisionDamage = Random.value * 5;
+			this.m_Enemies[i].GetComponent<Enemy>().CollisionInterval = 0.1f;
+			this.m_Enemies[i].name = "Enemy "+i;
+			
+			var weapon = WeaponSingleDumbFire.Create();
+			weapon.GetComponent<Weapon>().Cooldown = 2f;
+			weapon.GetComponent<Weapon>().Source = ShotSource.Foe;
+			this.m_Enemies[i].GetComponent<Enemy>().AddWeapon(weapon);
+			
+			this.ResetEnemy(i);
+		}
 	}
 	
 	public int GetDifficulty(int wave)
@@ -78,6 +116,8 @@ public class GameManager : MonoBehaviour
 		if(m_IsPlaying)
 		{
 			UpdateWave();
+			UpdateEnemies();
+			UpdateProjectiles();
 		}
 		
 		if(m_IsAnimatingMessage)
@@ -85,7 +125,44 @@ public class GameManager : MonoBehaviour
 			AnimateText();
 		}
 		
-		HandleInput();
+		HandleInput();		
+	}
+	
+	void UpdateEnemies()
+	{
+		for(int i=0;i<ENEMY_COUNT;i++)
+		{
+			Enemy current = this.m_Enemies[i].GetComponent<Enemy>();
+			if(current.IsDead)
+			{
+				m_Score += (int)current.MaxHealth;
+			}
+			
+			if(current.LifeTime <= 0 || current.IsDead)
+			{
+				this.ResetEnemy(i);
+				continue;
+			}
+			
+			if(Random.value < 0.2f)
+			{
+				current.Fire(true, (m_Ship.transform.position - current.transform.position).normalized);
+			}
+		}
+	}	
+	
+	void UpdateProjectiles()
+	{
+		IList<GameObject> activeShots = new List<GameObject>(this.shots);
+		foreach(GameObject obj in activeShots)
+		{			
+			Shot current = obj.GetComponent<Shot>();
+			if(current.LifeTime <= 0)
+			{				
+				this.shots.Remove(obj);
+				DestroyObject(obj);
+			}
+		}
 	}
 	
 	void HandleInput()
@@ -164,6 +241,7 @@ public class GameManager : MonoBehaviour
 			m_Ship.transform.localPosition = m_ShipSpawnPosition;
 			m_IsAnimatingEntry = false;
 			m_IsPlaying = true;
+			InitEnemies();
 		}
 		else
 		{
@@ -213,5 +291,52 @@ public class GameManager : MonoBehaviour
 				m_MessageText.renderer.material.color.b, 
 				1.0f - (Time.time - m_TextAnimationStartTime)/m_TextAnimationTime);
 		}
+	}
+	
+	public void AddShot(GameObject newShot)
+	{
+		newShot.transform.parent = this.ShotHolder.transform;
+		if(this.shots.Count > MAX_SHOTS)
+		{
+			var oldShot = this.shots[0];
+			this.shots.RemoveAt(0);
+			DestroyObject(oldShot);
+		}
+		
+		newShot.GetComponent<Shot>().IsActive = true;
+		this.shots.Add(newShot);
+	}
+	
+	public List<GameObject> GetShotsWithin(Vector3 center, float radius)
+	{
+		List<GameObject> result = new List<GameObject>();
+		List<GameObject> list = new List<GameObject>(this.shots);
+		for(int i=0;i<list.Count;i++)
+		{
+			if(list[i].GetComponent<Shot>().LifeTime <= 0 || list[i].GetComponent<Shot>().Source == ShotSource.Friend)
+			{
+				continue;
+			}
+		
+			if((list[i].collider.bounds.center - center).magnitude < radius)
+			{
+				result.Add(list[i]);
+			}
+			
+			/*if(bounds.Contains(list[i].collider.bounds.center) || bounds.Intersects(list[i].collider.bounds))
+			{
+				result.Add(list[i]);
+			}*/
+		}
+		
+		return result;
+	}
+	
+	private void ResetEnemy(int slot)
+	{
+		float pos = Random.Range(CameraManager.Instance.LeftBorder, CameraManager.Instance.RightBorder)*0.9f;
+		this.m_Enemies[slot].GetComponent<Enemy>().Initialize(new Vector3(pos, CameraManager.Instance.TopBorder, -75.0f), 15.0f, 20.0f + Random.value * 20.0f);
+		this.m_Enemies[slot].GetComponent<Enemy>().SetCollision(5.0f, 0.2f);
+		this.m_Enemies[slot].GetComponent<Enemy>().Health = 1.0f + Random.value * 10.0f;
 	}
 }

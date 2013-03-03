@@ -54,6 +54,7 @@ public class ShipBase : ActiveEntity
 	public void AddWeapon(GameObject weapon)
 	{
 		weapon.transform.parent = this.transform;
+		weapon.transform.localPosition = Vector3.zero;
 		this.weapons.Add(weapon, 0);
 	}
 	

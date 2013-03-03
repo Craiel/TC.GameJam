@@ -42,7 +42,7 @@ public class Player : ShipBase
 			{
 				if(weapon.GetComponent<WeaponGravity>() != null)
 				{
-					weapon.GetComponent<WeaponGravity>().ChangeRadius(wheel * 10.0f);
+					weapon.GetComponent<WeaponGravity>().ChangeRadius(wheel * 75.0f);
 				}
 			}
 		}

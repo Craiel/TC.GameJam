@@ -18,7 +18,8 @@ public class WeaponGravity : Weapon
 	private float rotationSpace = 8.0f;
 	private int maxGrab = 45;
 	
-	private Vector3 scale = new Vector3(0.1f, 0.1f, 0.1f);
+	//private Vector3 scale = new Vector3(0.1f, 0.1f, 0.1f);
+	private Vector3 scale = new Vector3(1f, 1f, 1f);
 	
 	private float colliderRadius;
 	
@@ -29,6 +30,7 @@ public class WeaponGravity : Weapon
 		var wellResource = Resources.Load("GravityWell") as GameObject;
 		this.resource = Instantiate(wellResource) as GameObject;
 		this.resource.transform.parent = this.transform;
+		this.resource.transform.localPosition = Vector3.zero;
 		this.resource.renderer.enabled = false;
 				
 		this.resourceGrabbed = Resources.Load("DumbFireFriendly") as GameObject;
@@ -62,14 +64,14 @@ public class WeaponGravity : Weapon
 			
 			print (dir + " -- "+pos);
 			var shot = Shot.Create(this.resourceGrabbed, true);
-			shot.transform.localScale = this.scale * 8;
-			shot.GetComponent<Shot>().Initialize(dir, pos, 7.0f, 3f);
+			//shot.transform.localScale = //this.scale * 8;
+			shot.GetComponent<Shot>().Initialize(dir, pos, 7.0f, 30f);
 			shot.GetComponent<Shot>().SetCollision(100.0f, 0.1f);
 			shot.GetComponent<Shot>().KillsShots = true;
 			shot.GetComponent<Shot>().Source = this.Source;
 			
 			shot.name = "Gravity Shot";
-			Camera.main.GetComponent<GameControlTest>().AddShot(shot);
+			GameObject.Find("GameManager").GetComponent<GameManager>().AddShot(shot);
 		}
 	}
 	
@@ -102,7 +104,7 @@ public class WeaponGravity : Weapon
 			this.colliderRadius = 0;
 		}
 		
-		this.grabTime = 0.2f + (this.colliderRadius / 4.0f);
+		this.grabTime = 0.2f + (this.colliderRadius / 40.0f);
 	}
 	
 	public void Update()
@@ -132,7 +134,7 @@ public class WeaponGravity : Weapon
 		
 		var collider = this.resource.GetComponent<SphereCollider>();		
 		IList<GameObject> pending = new List<GameObject>(this.pendingForGrab.Keys);
-		IList<GameObject> active = Camera.main.GetComponent<GameControlTest>().GetShotsWithin(this.resource.transform.position + collider.center, this.colliderRadius);
+		IList<GameObject> active = GameObject.Find("GameManager").GetComponent<GameManager>().GetShotsWithin(this.resource.transform.position + collider.center, this.colliderRadius);
 		foreach(GameObject shot in active)
 		{
 			if(!this.pendingForGrab.ContainsKey(shot))

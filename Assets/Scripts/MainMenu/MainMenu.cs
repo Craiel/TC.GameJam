@@ -14,7 +14,8 @@ public class MainMenu : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		if(Input.GetMouseButtonDown(0))
 		{
 			m_GameManager.StartGame();
