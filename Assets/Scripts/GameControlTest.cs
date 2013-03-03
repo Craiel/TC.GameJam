@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class GameControlTest : MonoBehaviour 
 {
-	private const int TestEnemyCount = 15;
+	private const int TestEnemyCount = 10;
 	private const int MaxShots = 500;
 	
 	private GameObject[] testEnemies = new GameObject[TestEnemyCount];
@@ -34,7 +34,6 @@ public class GameControlTest : MonoBehaviour
 	
 	public IList<GameObject> GetShotsWithin(Vector3 center, float radius)
 	{
-		print (center + " -> "+radius);
 		IList<GameObject> result = new List<GameObject>();
 		IList<GameObject> list = new List<GameObject>(this.shots);
 		for(int i=0;i<list.Count;i++)
@@ -76,7 +75,7 @@ public class GameControlTest : MonoBehaviour
 			this.testEnemies[i].name = "Enemy "+i;
 			
 			var weapon = WeaponSingleDumbFire.Create();
-			weapon.GetComponent<Weapon>().Cooldown = 1f;
+			weapon.GetComponent<Weapon>().Cooldown = 2f;
 			weapon.GetComponent<Weapon>().Source = ShotSource.Foe;
 			this.testEnemies[i].GetComponent<Enemy>().AddWeapon(weapon);
 			

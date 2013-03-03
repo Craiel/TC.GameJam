@@ -32,6 +32,7 @@ public class Shot : ActiveEntity
 	}
 	
 	public bool IsActive;
+	public bool KillsShots;
 	
 	public ShotSource Source;
 	
@@ -70,7 +71,7 @@ public class Shot : ActiveEntity
 		this.speed = speed;
 	}
 	
-	public static GameObject Create(GameObject resource)
+	public static GameObject Create(GameObject resource, bool rigid = false)
 	{
 		var shot = new GameObject("Shot");
 		shot.AddComponent<Shot>();
@@ -78,6 +79,13 @@ public class Shot : ActiveEntity
 		shot.GetComponent<BoxCollider>().isTrigger = true;
 		shot.GetComponent<Shot>().CollisionEnabled = false;
 		shot.name = "Shot";
+		
+		if(rigid)
+		{
+			shot.AddComponent<Rigidbody>();
+			shot.GetComponent<Rigidbody>().useGravity = false;
+			shot.GetComponent<Rigidbody>().isKinematic = true;
+		}
 		
 		GameObject resourceInstance = Instantiate(resource) as GameObject;
 		resourceInstance.transform.parent = shot.transform;
@@ -88,5 +96,25 @@ public class Shot : ActiveEntity
 	public void Terminate()
 	{
 		this.lifeTime = 0;
+	}
+	
+	private void OnTriggerEnter(Collider collider)
+	{
+		ActiveEntity component = collider.gameObject.GetComponent(typeof(ActiveEntity)) as ActiveEntity;
+		if(component != null)
+		{
+			if(!component.CollisionEnabled)
+			{
+				return;
+			}
+			
+			if(component.GetType() == typeof(Shot))
+			{
+				if(((Shot)component).KillsShots && ((Shot)component).Source != this.Source)
+				{
+					this.Terminate();
+				}
+			}
+		}
 	}
 }
