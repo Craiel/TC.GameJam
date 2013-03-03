@@ -43,6 +43,10 @@ ModelImporter:
     100074: Object006
     100076: Object007
     100078: Plane007
+    100080: Box051
+    100082: Object011
+    100084: Object012
+    100086: Object013
     400000: ' '
     400002: ' 001'
     400004: Box002
@@ -83,6 +87,10 @@ ModelImporter:
     400074: Object006
     400076: Object007
     400078: Plane007
+    400080: Box051
+    400082: Object011
+    400084: Object012
+    400086: Object013
     2300000: Box002
     2300002: Box005
     2300004: Box006
@@ -121,6 +129,8 @@ ModelImporter:
     2300070: Object006
     2300072: Object007
     2300074: Plane007
+    2300076: Box051
+    2300078: Object013
     3300000: Box002
     3300002: Box005
     3300004: Box006
@@ -159,6 +169,8 @@ ModelImporter:
     3300070: Object006
     3300072: Object007
     3300074: Plane007
+    3300076: Box051
+    3300078: Object013
     4300000: Box006
     4300002: Box005
     4300004: Box002
@@ -197,6 +209,8 @@ ModelImporter:
     4300070: Box031
     4300072: Box032
     4300074: Box033
+    4300076: Box051
+    4300078: Object013
     9500000: //RootNode
   materials:
     importMaterials: 1
