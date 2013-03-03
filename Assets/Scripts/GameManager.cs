@@ -334,7 +334,6 @@ public class GameManager : MonoBehaviour
 	private void ResetEnemy(int slot)
 	{
 		float pos = Random.Range(CameraManager.Instance.LeftBorder, CameraManager.Instance.RightBorder)*0.9f;
-		Debug.Log ("POS: " + pos);
 		this.m_Enemies[slot].GetComponent<Enemy>().Initialize(new Vector3(pos, CameraManager.Instance.TopBorder, -75.0f), 15.0f, 20.0f + Random.value * 20.0f);
 		this.m_Enemies[slot].GetComponent<Enemy>().SetCollision(5.0f, 0.2f);
 		this.m_Enemies[slot].GetComponent<Enemy>().Health = 1.0f + Random.value * 10.0f;

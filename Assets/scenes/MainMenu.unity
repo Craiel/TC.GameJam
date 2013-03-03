@@ -196,7 +196,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 587f2ff88e08f4b4496a458534a59a43, type: 2}
   m_NumVisibleModules: 3
   m_IsScrolling: 1
-  m_ScrollSpeedPerSecond: -200
+  m_ScrollSpeedPerSecond: -75
 --- !u!4 &45847090
 Transform:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: GravityWellMaterial
+  m_Name: GravityWellIndicatorMaterial
   m_Shader: {fileID: 30, guid: 0000000000000000e000000000000000, type: 0}
   m_SavedProperties:
     serializedVersion: 2
@@ -23,4 +23,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .477166384, g: .571088195, b: .940298498, a: .360784322}
+        second: {r: .498121351, g: 0, b: .619403005, a: .419607848}

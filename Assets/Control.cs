@@ -54,7 +54,7 @@ public class Control : MonoBehaviour {
 		
 	// Update is called once per frame
 	void Update ()
-	{		
+	{
 		float newX = Input.GetAxis("Mouse X");
 		float newY = Input.GetAxis("Mouse Y");
 		
@@ -75,10 +75,16 @@ public class Control : MonoBehaviour {
 		//this.CheckBounds(ref newX, ref newY);
 		
 		//print ("[1] = Stat: "+xMovement+"x"+yMovement+" | "+this.currentX+"x"+this.currentY+" | "+newX+"x"+newY);
-				
+			
+		if(newX == 0.0f && newY == 0.0f)
+		{
+			return;
+		}
+		
 		this.bankingX += (newX * this.BankingFactor);
 		this.bankingY += (newY * this.BankingFactor);		
 			
+		Vector3 change = new Vector3(newX * Sensitivity, newY * Sensitivity, 0);
 		transform.Translate(new Vector3(newX * Sensitivity, newY * Sensitivity, 0), null);
 	}
 	
