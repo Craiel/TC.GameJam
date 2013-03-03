@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: DumbFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!114 &11400000
@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Name: 
   m_BulletPrefab: {fileID: 400000, guid: 49b0f05f93372024289b054158cbd4ff, type: 2}
   m_ExplosionPrefab: {fileID: 400000, guid: 7acf61859a36b374db7dabd02be0aecf, type: 2}
-  m_ExplosionTime: 3
+  m_ExplosionTime: 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
