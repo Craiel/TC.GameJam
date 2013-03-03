@@ -13,8 +13,7 @@ public class Shot : ActiveEntity
 	private Vector3? startPos;
 	
 	private float speed;
-	private float lifeTime;
-	
+	private float lifeTime;	
 		
 	public float LifeTime
 	{
@@ -32,10 +31,28 @@ public class Shot : ActiveEntity
 		}
 	}
 	
+	public bool IsActive;
+	public bool KillsShots;
+	
 	public ShotSource Source;
+	
+	public void ChangeTarget(Vector3 target)
+	{
+		this.direction = (target - this.transform.position).normalized;
+	}
+	
+	public void ChangeSpeed(float diff)
+	{
+		this.speed += diff;
+	}
 	
 	void Update()
 	{		
+		if(!this.IsActive)
+		{
+			return;
+		}
+		
 		if(this.startPos != null)
 		{
 			this.transform.position = (Vector3)this.startPos;
@@ -43,7 +60,8 @@ public class Shot : ActiveEntity
 		}
 		
 		this.lifeTime -= Time.deltaTime;
-		this.transform.Translate(this.direction * this.speed * Time.deltaTime);
+		//this.transform.Translate(this.direction * this.speed * Time.deltaTime);
+		this.transform.localPosition += direction*speed*Time.deltaTime;
 	}
 	
 	public void Initialize(Vector3 direction, Vector3 position, float lifeTime, float speed)
@@ -54,7 +72,7 @@ public class Shot : ActiveEntity
 		this.speed = speed;
 	}
 	
-	public static GameObject Create(GameObject resource)
+	public static GameObject Create(GameObject resource, bool rigid = false)
 	{
 		var shot = new GameObject("Shot");
 		shot.AddComponent<Shot>();
@@ -62,6 +80,13 @@ public class Shot : ActiveEntity
 		shot.GetComponent<BoxCollider>().isTrigger = true;
 		shot.GetComponent<Shot>().CollisionEnabled = false;
 		shot.name = "Shot";
+		
+		if(rigid)
+		{
+			shot.AddComponent<Rigidbody>();
+			shot.GetComponent<Rigidbody>().useGravity = false;
+			shot.GetComponent<Rigidbody>().isKinematic = true;
+		}
 		
 		GameObject resourceInstance = Instantiate(resource) as GameObject;
 		resourceInstance.transform.parent = shot.transform;
@@ -79,6 +104,26 @@ public class Shot : ActiveEntity
 			this.SetCollision( 0.0f, 1.0f ); // disable collision
 			this.lifeTime = projectile.m_ExplosionTime;
 			projectile.Explode();
+		}
+	}
+	
+	private void OnTriggerEnter(Collider collider)
+	{
+		ActiveEntity component = collider.gameObject.GetComponent(typeof(ActiveEntity)) as ActiveEntity;
+		if(component != null)
+		{
+			if(!component.CollisionEnabled)
+			{
+				return;
+			}
+			
+			if(component.GetType() == typeof(Shot))
+			{
+				if(((Shot)component).KillsShots && ((Shot)component).Source != this.Source)
+				{
+					this.Terminate();
+				}
+			}
 		}
 	}
 }

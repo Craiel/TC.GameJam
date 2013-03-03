@@ -35,7 +35,8 @@ public class Enemy : ShipBase
 		}
 		
 		this.lifeTime -= Time.deltaTime;
-		this.transform.Translate(0, -this.speed * Time.deltaTime, 0);
+		//this.transform.Translate(0, -this.speed * Time.deltaTime, 0, Space.Self);
+		this.transform.localPosition += new Vector3(0, -this.speed * Time.deltaTime, 0);
 	}
 	
 	public void Initialize(Vector3 position, float lifeTime, float speed)

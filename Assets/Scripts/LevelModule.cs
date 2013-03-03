@@ -8,7 +8,7 @@ public class LevelModule : Subject {
 	// Update is called once per frame
 	void Update () 
 	{	
-		if(this.transform.position.y < -m_PieceLength)
+		if(this.transform.position.y < -m_PieceLength*1.5f)
 		{
 			NotifyObservers("OutOfScreen");
 		}

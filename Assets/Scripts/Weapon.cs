@@ -12,4 +12,8 @@ public class Weapon : MonoBehaviour
 	public virtual void Fire()
 	{
 	}
+	
+	public virtual void Disable()
+	{
+	}
 }
