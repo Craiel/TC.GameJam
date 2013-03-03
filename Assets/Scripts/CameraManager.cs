@@ -2,24 +2,21 @@ using UnityEngine;
 using System.Collections;
 
 public class CameraManager : MonoBehaviour {
-
+	
 #region Class Singleton
-	private CameraManager m_Instance = null;
-	public CameraManager Instance
+	private static CameraManager m_Instance = null;
+
+	public static CameraManager Instance
 	{
 		get
 		{
 			if(m_Instance == null)
 			{
-				m_Instance = new CameraManager();
+				m_Instance = (new GameObject("CameraManager")).AddComponent<CameraManager>();
 			}
 			return m_Instance;
 		}
 	}
-	
-		public CameraManager(){}
-	
-	~CameraManager(){}
 #endregion
 
 #region Properties
@@ -63,10 +60,14 @@ public class CameraManager : MonoBehaviour {
 	
 	private Vector3 m_BorderTempVector = Vector3.zero;
 	
+	void Awake()
+	{
+		UpdateBorders();
+	}
+	
 	// Use this for initialization
 	void Start () 
 	{
-		UpdateBorders();
 	}
 	
 	void Update()
@@ -76,6 +77,7 @@ public class CameraManager : MonoBehaviour {
 	
 	void UpdateBorders()
 	{
+		//print ("Updating camera borders..");
 		m_BorderTempVector.Set(0,0,Camera.main.transform.position.z);
 		m_LeftBorder = Camera.main.ViewportToWorldPoint(m_BorderTempVector).x;
 		m_TopBorder = Camera.main.ViewportToWorldPoint(m_BorderTempVector).y;
@@ -83,6 +85,7 @@ public class CameraManager : MonoBehaviour {
 		m_BorderTempVector.Set(1,1,Camera.main.transform.position.z);
 		m_RightBorder = Camera.main.ViewportToWorldPoint(m_BorderTempVector).x;
 		m_BottomBorder = Camera.main.ViewportToWorldPoint(m_BorderTempVector).y;		
+		//print ("Borders:" +m_LeftBorder+", "+m_RightBorder+", "+m_TopBorder+", "+m_BottomBorder);
 	}
 		
 }

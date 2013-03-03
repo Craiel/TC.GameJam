@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: be3ca85dc5b5988419b2b9148c060230
+guid: 59f9ab0b1383b4f468d1f467c2d22aaa
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
@@ -12,6 +12,32 @@ ModelImporter:
     100012: Icosphere_001
     100014: Icosphere_002
     100016: //RootNode
+    100018: Camera
+    100020: Plane_000
+    100022: Plane_001
+    100024: Plane_005
+    100026: Point
+    100028: Point_001
+    100030: Point_002
+    100032: Point_003
+    100034: Point_004
+    100036: BottomGravityWell
+    100038: BottomGravityWellLight
+    100040: Camera_001
+    100042: Chasis
+    100044: EngineDevel
+    100046: LeftEngine
+    100048: LeftGravityWell
+    100050: LeftGravityWellLight
+    100052: LeftRedBounces
+    100054: RightEngine
+    100056: RightGravityWell
+    100058: RightGravityWellLight
+    100060: RightRedBounces
+    100062: Spaceship
+    100064: Sun
+    100066: Sun_001
+    100068: Sun_002
     400000: BezierCircle
     400002: BezierCurve
     400004: BezierCurve_001
@@ -21,6 +47,32 @@ ModelImporter:
     400012: Icosphere_001
     400014: Icosphere_002
     400016: //RootNode
+    400018: Camera
+    400020: Plane_000
+    400022: Plane_001
+    400024: Plane_005
+    400026: Point
+    400028: Point_001
+    400030: Point_002
+    400032: Point_003
+    400034: Point_004
+    400036: BottomGravityWell
+    400038: BottomGravityWellLight
+    400040: Camera_001
+    400042: Chasis
+    400044: EngineDevel
+    400046: LeftEngine
+    400048: LeftGravityWell
+    400050: LeftGravityWellLight
+    400052: LeftRedBounces
+    400054: RightEngine
+    400056: RightGravityWell
+    400058: RightGravityWellLight
+    400060: RightRedBounces
+    400062: Spaceship
+    400064: Sun
+    400066: Sun_001
+    400068: Sun_002
     2300000: BezierCircle
     2300002: BezierCurve
     2300004: BezierCurve_001
@@ -29,6 +81,16 @@ ModelImporter:
     2300010: Icosphere
     2300012: Icosphere_001
     2300014: Icosphere_002
+    2300016: Plane_000
+    2300018: Plane_001
+    2300020: Plane_005
+    2300022: BottomGravityWell
+    2300024: Chasis
+    2300026: EngineDevel
+    2300028: LeftEngine
+    2300030: LeftGravityWell
+    2300032: RightEngine
+    2300034: RightGravityWell
     3300000: BezierCircle
     3300002: BezierCurve
     3300004: BezierCurve_001
@@ -37,19 +99,39 @@ ModelImporter:
     3300010: Icosphere
     3300012: Icosphere_001
     3300014: Icosphere_002
+    3300016: Plane_000
+    3300018: Plane_001
+    3300020: Plane_005
+    3300022: BottomGravityWell
+    3300024: Chasis
+    3300026: EngineDevel
+    3300028: LeftEngine
+    3300030: LeftGravityWell
+    3300032: RightEngine
+    3300034: RightGravityWell
     4300000: Cylinder_001
     4300002: Icosphere_002
     4300004: Icosphere_001
     4300006: Cube
+    4300008: Plane_001
     4300010: Icosphere
     4300012: BezierCurve_001
     4300014: BezierCurve
+    4300016: Plane_000
+    4300018: Plane_005
+    4300020: EngineDevel
+    4300022: Chasis
+    4300024: BottomGravityWell
+    4300026: RightGravityWell
+    4300028: LeftEngine
+    4300030: RightEngine
+    4300032: LeftGravityWell
     7400000: Default Take
     9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
-    materialSearch: 1
+    materialSearch: 2
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
