@@ -321,13 +321,9 @@ public class GameManager : MonoBehaviour
 			{
 				result.Add(list[i]);
 			}
-			
-			/*if(bounds.Contains(list[i].collider.bounds.center) || bounds.Intersects(list[i].collider.bounds))
-			{
-				result.Add(list[i]);
-			}*/
 		}
 		
+		print("In Well: "+result.Count);
 		return result;
 	}
 	

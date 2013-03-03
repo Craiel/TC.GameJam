@@ -29,18 +29,14 @@ public class WeaponGravity : Weapon
 	private float grabLockRadius = 2.0f;
 	
 	private bool delayRadiusIncrease = false;
-	private float radiusIncreaseInterval = 1.0f;
+	private float radiusIncreaseInterval = 0.5f;
 	private float radiusIncreaseState = 0;
-	private float radiusIncreaseSpeed = 1.5f;
-	private float radiusIncrease = 5.0f;
-	private float radiusIncreaseDelay = 2.0f;
+	private float radiusIncrease = 2.5f;
+	private float radiusIncreaseDelay = 0.5f;
 	private float radiusIncreaseDelayState = 0;
-	
-	//private Vector3 scale = new Vector3(0.1f, 0.1f, 0.1f);
-	private Vector3 scale = new Vector3(1f, 1f, 1f);
-	
+		
 	private float colliderRadius;
-	private float colliderRadiusMin = 15.0f;
+	private float colliderRadiusMin = 22.0f;
 	private float colliderRadiusMax = 90.0f;
 	
 	private Vector3 rotationOffset = new Vector3(1.5f, 0, 0);
@@ -83,9 +79,13 @@ public class WeaponGravity : Weapon
 	
 	public override void AlternateFire()
 	{
+		if(this.grabbedShots.Count <= 0)
+		{
+			return;
+		}
+		
 		IList<GameObject> shots = new List<GameObject>(this.grabbedShots);
 		this.grabbedShots.Clear();
-		print ("Releasing shots: "+shots.Count);
 		foreach(GameObject grabbed in shots)
 		{
 			Vector3 pos = grabbed.transform.position;
@@ -93,10 +93,9 @@ public class WeaponGravity : Weapon
 			
 			DestroyObject(grabbed);
 			
-			print (dir + " -- "+pos);
 			var shot = Shot.Create(this.resourceGrabbed, true);
 			//shot.transform.localScale = //this.scale * 8;
-			shot.GetComponent<Shot>().Initialize(dir, pos, 7.0f, 30f);
+			shot.GetComponent<Shot>().Initialize(dir, pos, 7.0f, 50f);
 			shot.GetComponent<Shot>().SetCollision(100.0f, 0.1f);
 			shot.GetComponent<Shot>().KillsShots = true;
 			shot.GetComponent<Shot>().Source = this.Source;
@@ -173,6 +172,7 @@ public class WeaponGravity : Weapon
 		
 		if(this.grabbedShots.Count >= this.maxGrab)
 		{
+			this.Disable();
 			return;
 		}
 		
@@ -188,7 +188,7 @@ public class WeaponGravity : Weapon
 		
 		if(!this.delayRadiusIncrease)
 		{
-			this.radiusIncreaseState += this.radiusIncreaseSpeed * Time.deltaTime;
+			this.radiusIncreaseState += 1.0f * Time.deltaTime;
 			if(this.radiusIncreaseState >= this.radiusIncreaseInterval)
 			{
 				this.ChangeRadius(this.radiusIncrease);
@@ -206,7 +206,6 @@ public class WeaponGravity : Weapon
 		
 		if(this.colliderRadius >= this.colliderRadiusMax)
 		{
-			this.Disable();
 			return;
 		}
 		
