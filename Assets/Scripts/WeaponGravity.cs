@@ -14,6 +14,7 @@ public class WeaponGravity : Weapon
 	
 	private float grabTime = 0.2f;
 	private float angle = 0.0f;
+<<<<<<< HEAD
 	private float shotMoveSpeed = 1.0f;
 	private float rotationSpace = 8.0f;
 	private int maxGrab = 45;
@@ -22,6 +23,29 @@ public class WeaponGravity : Weapon
 	private Vector3 scale = new Vector3(1f, 1f, 1f);
 	
 	private float colliderRadius;
+=======
+	private float shotMoveSpeed = 2.5f;
+	private int maxGrab = 60;
+	
+	private float scaleGrabTimeAdd = 0f;
+	private float massGrabTimeAdd = 0f;
+	
+	private float scaleGrabAccelleration = 0f;
+	
+	private float grabLockSpeed = 170.0f;
+	private float grabLockRadius = 2.0f;
+	
+	private bool delayRadiusIncrease = false;
+	private float radiusIncreaseInterval = 0.5f;
+	private float radiusIncreaseState = 0;
+	private float radiusIncrease = 2.5f;
+	private float radiusIncreaseDelay = 0.5f;
+	private float radiusIncreaseDelayState = 0;
+		
+	private float colliderRadius;
+	private float colliderRadiusMin = 22.0f;
+	private float colliderRadiusMax = 90.0f;
+>>>>>>> 7f39c1879897e2bdfb02a389b8df652c6885944d
 	
 	private Vector3 rotationOffset = new Vector3(1.5f, 0, 0);
 	
@@ -52,9 +76,13 @@ public class WeaponGravity : Weapon
 	
 	private void ReleaseLeftOvers()
 	{
+		if(this.grabbedShots.Count <= 0)
+		{
+			return;
+		}
+		
 		IList<GameObject> shots = new List<GameObject>(this.grabbedShots);
 		this.grabbedShots.Clear();
-		print ("Releasing shots: "+shots.Count);
 		foreach(GameObject grabbed in shots)
 		{
 			Vector3 pos = grabbed.transform.position;
@@ -62,10 +90,9 @@ public class WeaponGravity : Weapon
 			
 			DestroyObject(grabbed);
 			
-			print (dir + " -- "+pos);
 			var shot = Shot.Create(this.resourceGrabbed, true);
 			//shot.transform.localScale = //this.scale * 8;
-			shot.GetComponent<Shot>().Initialize(dir, pos, 7.0f, 30f);
+			shot.GetComponent<Shot>().Initialize(dir, pos, 7.0f, 50f);
 			shot.GetComponent<Shot>().SetCollision(100.0f, 0.1f);
 			shot.GetComponent<Shot>().KillsShots = true;
 			shot.GetComponent<Shot>().Source = this.Source;
@@ -129,9 +156,46 @@ public class WeaponGravity : Weapon
 		
 		if(this.grabbedShots.Count >= this.maxGrab)
 		{
+			this.Disable();
 			return;
 		}
 		
+<<<<<<< HEAD
+=======
+		if(this.delayRadiusIncrease)
+		{
+			this.radiusIncreaseDelayState += 1.0f * Time.deltaTime;
+			if(this.radiusIncreaseDelayState > this.radiusIncreaseDelay)
+			{
+				this.delayRadiusIncrease = false;
+				this.radiusIncreaseDelayState = 0;
+			}
+		}
+		
+		if(!this.delayRadiusIncrease)
+		{
+			this.radiusIncreaseState += 1.0f * Time.deltaTime;
+			if(this.radiusIncreaseState >= this.radiusIncreaseInterval)
+			{
+				this.ChangeRadius(this.radiusIncrease);
+				this.radiusIncreaseState = 0;
+				this.radiusIncreaseIndicator.renderer.enabled = false;
+				this.delayRadiusIncrease = true;
+			} 
+			else
+			{
+				float range = (this.radiusIncreaseState / this.radiusIncreaseInterval);
+				this.radiusIncreaseIndicator.renderer.enabled = true;
+				this.radiusIncreaseIndicator.transform.localScale = this.resource.transform.localScale * range;
+			}
+		}
+		
+		if(this.colliderRadius >= this.colliderRadiusMax)
+		{
+			return;
+		}
+		
+>>>>>>> 7f39c1879897e2bdfb02a389b8df652c6885944d
 		var collider = this.resource.GetComponent<SphereCollider>();		
 		IList<GameObject> pending = new List<GameObject>(this.pendingForGrab.Keys);
 		IList<GameObject> active = GameObject.Find("GameManager").GetComponent<GameManager>().GetShotsWithin(this.resource.transform.position + collider.center, this.colliderRadius);

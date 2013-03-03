@@ -10,11 +10,6 @@ public class Player : ShipBase
 	{	
 		this.Health = this.StartingHealth;
 		
-		/*var weapon = WeaponSpreadDumbFire.Create();
-		weapon.name = "Test Gun";
-		weapon.GetComponent<Weapon>().Source = ShotSource.Friend;
-		weapon.GetComponent<Weapon>().Cooldown = 0.2f;*/
-		
 		var weapon = WeaponGravity.Create();
 		weapon.name = "Gravity Gun";
 		weapon.GetComponent<Weapon>().Source = ShotSource.Friend;
@@ -22,7 +17,7 @@ public class Player : ShipBase
 		this.AddWeapon(weapon);
 	}
 	
-	public void Update()
+	public override void Update()
 	{
 		base.Update();
 		
