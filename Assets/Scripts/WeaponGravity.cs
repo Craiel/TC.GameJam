@@ -12,7 +12,7 @@ public class WeaponGravity : Weapon
 	private IDictionary<GameObject, float> pendingForGrab = new Dictionary<GameObject, float>();
 	private IList<GameObject> grabbedShots = new List<GameObject>();
 	
-	private float grabTime = 2.0f;
+	private float grabTime = 0.2f;
 	private float angle = 0.0f;
 	private float shotMoveSpeed = 1.0f;
 	private float rotationSpace = 8.0f;
@@ -22,7 +22,7 @@ public class WeaponGravity : Weapon
 	
 	private float colliderRadius;
 	
-	private Vector3 rotationOffset = new Vector3(3.0f, 0, 0);
+	private Vector3 rotationOffset = new Vector3(1.5f, 0, 0);
 	
 	void Start()
 	{
@@ -61,10 +61,11 @@ public class WeaponGravity : Weapon
 			DestroyObject(grabbed);
 			
 			print (dir + " -- "+pos);
-			var shot = Shot.Create(this.resourceGrabbed);
+			var shot = Shot.Create(this.resourceGrabbed, true);
 			shot.transform.localScale = this.scale * 8;
-			shot.GetComponent<Shot>().Initialize(dir, pos, 4.0f, 2f);
+			shot.GetComponent<Shot>().Initialize(dir, pos, 7.0f, 3f);
 			shot.GetComponent<Shot>().SetCollision(100.0f, 0.1f);
+			shot.GetComponent<Shot>().KillsShots = true;
 			shot.GetComponent<Shot>().Source = this.Source;
 			
 			shot.name = "Gravity Shot";
@@ -95,11 +96,13 @@ public class WeaponGravity : Weapon
 	{
 		this.resource.transform.localScale += new Vector3(change, change, change);
 		this.colliderRadius += change;
-		if(this.resource.transform.localScale.x < 0.0f || this.resource.transform.localScale.y < 0.0f || this.transform.localScale.z < 0.0f)
+		if(this.colliderRadius < 0.0f)
 		{
 			this.resource.transform.localScale -= new Vector3(change, change, change);
-			this.colliderRadius -= change;
+			this.colliderRadius = 0;
 		}
+		
+		this.grabTime = 0.2f + (this.colliderRadius / 4.0f);
 	}
 	
 	public void Update()
@@ -111,7 +114,7 @@ public class WeaponGravity : Weapon
 			for(int i=0;i<shots.Count;i++)
 			{
 				shots[i].transform.position = this.resource.transform.position;
-				shots[i].transform.Translate(this.rotationOffset);
+				shots[i].transform.Translate(this.rotationOffset + new Vector3(this.colliderRadius / 4.0f, 0, 0));
 				shots[i].transform.rotation = Quaternion.AngleAxis(this.angle + (i * this.rotationSpace), Vector3.forward);
 				shots[i].GetComponent<Shot>().IsActive = true;
 			}
