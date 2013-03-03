@@ -11,7 +11,11 @@ public class Projectile : MonoBehaviour
 	
 	void Start()
 	{
+<<<<<<< HEAD
 		var visualTransform = Instantiate( m_BulletPrefab ) as Transform;
+=======
+		var visualTransform = Instantiate( m_BulletPrefab, transform.position, transform.rotation ) as Transform;
+>>>>>>> master
 		m_Visual = visualTransform.gameObject;
 		m_Visual.transform.parent = this.transform;
 	}
