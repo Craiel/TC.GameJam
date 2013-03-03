@@ -3,3 +3,8 @@ Library
 Temp
 TestBuilds
 Builds
+*.sln
+*.csproj
+*.pidb
+*.unityproj
+*.userprefs
