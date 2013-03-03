@@ -12,8 +12,8 @@ FBXHeaderExtension:  {
         Month: 03
         Day: 03
         Hour: 02
-        Minute: 22
-        Second: 41
+        Minute: 21
+        Second: 38
         Millisecond: 0
     }
     Creator: "FBX SDK/FBX Plugins build 20070228"
@@ -21,7 +21,7 @@ FBXHeaderExtension:  {
         FlagPLE: 0
     }
 }
-CreationTime: "2013-03-03 02:22:41:000"
+CreationTime: "2013-03-03 02:21:38:000"
 Creator: "Blender version 2.65 (sub 0)"
 
 ; Object definitions
@@ -133,7 +133,7 @@ Objects:  {
         CameraName: 100
         CameraIndexName:
     }
-	Model: "Model::Spaceship", "Null" {
+	Model: "Model::Boss", "Null" {
 		Version: 232
         Properties60:  {
             Property: "QuaternionInterpolate", "bool", "",0
@@ -1299,7 +1299,7 @@ Objects:  {
         }
         NbPoseNodes: 1
 		PoseNode:  {
-			Node: "Model::Spaceship"
+			Node: "Model::Boss"
 			Matrix: 1.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,-1.000000000000000,0.000000000000000,0.000000000000000,1.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,1.000000000000000
 		}
 	}
@@ -1321,7 +1321,7 @@ Objects:  {
 ;------------------------------------------------------------------
 
 Relations:  {
-	Model: "Model::Spaceship", "Null" {
+	Model: "Model::Boss", "Null" {
 	}
     Model: "Model::Producer Perspective", "Camera" {
     }
@@ -1345,7 +1345,7 @@ Relations:  {
 ;------------------------------------------------------------------
 
 Connections:  {
-	Connect: "OO", "Model::Spaceship", "Model::Scene"
+	Connect: "OO", "Model::Boss", "Model::Scene"
 }
 ;Takes and animation section
 ;----------------------------------------------------
