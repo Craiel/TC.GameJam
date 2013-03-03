@@ -72,5 +72,13 @@ public class Shot : ActiveEntity
 	public void Terminate()
 	{
 		this.lifeTime = 0;
+		this.speed = 0;
+		var projectile = this.gameObject.GetComponentInChildren< Projectile >();
+		if ( projectile )
+		{
+			this.SetCollision( 0.0f, 1.0f ); // disable collision
+			this.lifeTime = projectile.m_ExplosionTime;
+			projectile.Explode();
+		}
 	}
 }
