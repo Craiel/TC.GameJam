@@ -60,10 +60,14 @@ public class CameraManager : MonoBehaviour {
 	
 	private Vector3 m_BorderTempVector = Vector3.zero;
 	
+	void Awake()
+	{
+		UpdateBorders();
+	}
+	
 	// Use this for initialization
 	void Start () 
 	{
-		UpdateBorders();
 	}
 	
 	void Update()
