@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session version="2.0.0" name="theme" sample-rate="44100" id-counter="1267">
+<Session version="2.0.0" name="theme" sample-rate="44100" id-counter="2312">
   <Config>
     <Option name="output-auto-connect" value="2"/>
     <Option name="input-auto-connect" value="1"/>
+    <Option name="mtc-port-name" value="control"/>
+    <Option name="mmc-port-name" value="control"/>
+    <Option name="midi-port-name" value="control"/>
     <Option name="clicking" value="no"/>
     <Option name="punch-in" value="yes"/>
     <Option name="punch-out" value="no"/>
@@ -11,121 +14,28 @@
     <end-marker-is-free val="no"/>
   </Config>
   <Sources>
-    <Source name="Audio 1-1.wav" id="75" captured-for="Audio 1" flags="" channel="0"/>
-    <Source name="Audio 2-1.wav" id="90" captured-for="Audio 2" flags="" channel="0"/>
-    <Source name="Audio 3-1.wav" id="105" captured-for="Audio 3" flags="" channel="0"/>
-    <Source name="Audio 1-2.wav" id="142" captured-for="Audio 1" flags="" channel="0"/>
     <Source name="Audio 1-3.wav" id="174" captured-for="Audio 1" flags="" channel="0"/>
-    <Source name="Audio 1-4.wav" id="210" captured-for="Audio 1" flags="" channel="0"/>
-    <Source name="Audio 2-2.wav" id="256" captured-for="Audio 2" flags="" channel="0"/>
-    <Source name="Audio 2-3.wav" id="275" captured-for="Audio 2" flags="" channel="0"/>
     <Source name="Audio 2-4.wav" id="317" captured-for="Audio 2" flags="" channel="0"/>
-    <Source name="Audio 2-5.wav" id="346" captured-for="Audio 2" flags="" channel="0"/>
     <Source name="Audio 2-6.wav" id="379" captured-for="Audio 2" flags="" channel="0"/>
     <Source name="Audio 2-7.wav" id="408" captured-for="Audio 2" flags="" channel="0"/>
     <Source name="Audio 2-8.wav" id="467" captured-for="Audio 2" flags="" channel="0"/>
-    <Source name="Audio 2-9.wav" id="516" captured-for="Audio 2" flags="" channel="0"/>
     <Source name="Audio 2-10.wav" id="556" captured-for="Audio 2" flags="" channel="0"/>
-    <Source name="Audio 3-2.wav" id="580" captured-for="Audio 3" flags="" channel="0"/>
     <Source name="Audio 3-3.wav" id="609" captured-for="Audio 3" flags="" channel="0"/>
-    <Source name="Audio 3-4.wav" id="640" captured-for="Audio 3" flags="" channel="0"/>
-    <Source name="Audio 3-5.wav" id="685" captured-for="Audio 3" flags="" channel="0"/>
-    <Source name="Audio 2-11.wav" id="733" captured-for="Audio 2" flags="" channel="0"/>
     <Source name="Audio 2-12.wav" id="892" captured-for="Audio 2" flags="" channel="0"/>
-    <Source name="Audio 1-5.wav" id="933" captured-for="Audio 1" flags="" channel="0"/>
     <Source name="Audio 1-6.wav" id="963" captured-for="Audio 1" flags="" channel="0"/>
     <Source name="Audio 3-6.wav" id="1087" captured-for="Audio 3" flags="" channel="0"/>
-    <Source name="Audio 3-7.wav" id="1118" captured-for="Audio 3" flags="" channel="0"/>
     <Source name="Audio 3-8.wav" id="1209" captured-for="Audio 3" flags="" channel="0"/>
   </Sources>
   <Regions>
-    <Region id="131" name="Audio 1-1" start="0" length="140288" position="0" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="75" channels="1" master-source-0="75">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-    </Region>
-    <Region id="136" name="Audio 1-1.1" start="0" length="140288" position="0" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="75" channels="1" master-source-0="75">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-      <extra>
-        <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-      </extra>
-    </Region>
-    <Region id="163" name="Audio 1-2" start="0" length="1020928" position="0" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="142" channels="1" master-source-0="142">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-    </Region>
-    <Region id="168" name="Audio 1-2.1" start="156800" length="864128" position="156800" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="142" channels="1" master-source-0="142">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-      <extra>
-        <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-      </extra>
-    </Region>
     <Region id="199" name="Audio 1-3" start="0" length="1313792" position="0" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="174" channels="1" master-source-0="174">
       <FadeIn default="yes" active="yes"/>
       <FadeOut default="yes" active="yes"/>
       <Envelope default="yes"/>
     </Region>
-    <Region id="245" name="Audio 2-1" start="0" length="1966080" position="340492" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="90" channels="1" master-source-0="90">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-    </Region>
-    <Region id="250" name="Audio 2-1.1" start="270123" length="1695957" position="610615" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="90" channels="1" master-source-0="90">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-      <extra>
-        <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-      </extra>
-    </Region>
-    <Region id="264" name="Audio 2-2" start="0" length="84992" position="135692" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="256" channels="1" master-source-0="256">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-    </Region>
-    <Region id="269" name="Audio 2-2.1" start="0" length="84992" position="135692" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="1" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="256" channels="1" master-source-0="256">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-      <extra>
-        <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-      </extra>
-    </Region>
-    <Region id="306" name="Audio 2-3" start="0" length="1896448" position="0" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="275" channels="1" master-source-0="275">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-    </Region>
-    <Region id="311" name="Audio 2-3.1" start="0" length="1896448" position="0" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="275" channels="1" master-source-0="275">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-      <extra>
-        <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-      </extra>
-    </Region>
     <Region id="335" name="Audio 2-4" start="0" length="1869824" position="0" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="317" channels="1" master-source-0="317">
       <FadeIn default="yes" active="yes"/>
       <FadeOut default="yes" active="yes"/>
       <Envelope default="yes"/>
-    </Region>
-    <Region id="362" name="Audio 2-5" start="0" length="136192" position="441000" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="346" channels="1" master-source-0="346">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-    </Region>
-    <Region id="367" name="Audio 2-5.1" start="0" length="136192" position="441000" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="1" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut" scale-gain="1" source-0="346" channels="1" master-source-0="346">
-      <FadeIn default="yes" active="no"/>
-      <FadeOut default="yes" active="no"/>
-      <Envelope default="yes"/>
-      <extra>
-        <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-      </extra>
     </Region>
     <Region id="397" name="Audio 2-6" start="0" length="805945" position="1221231" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="379" channels="1" master-source-0="379">
       <FadeIn default="yes" active="yes"/>
@@ -142,116 +52,17 @@
       <FadeOut default="yes" active="yes"/>
       <Envelope default="yes"/>
     </Region>
-    <Region id="545" name="Audio 2-9" start="0" length="1245344" position="2849538" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="516" channels="1" master-source-0="516">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-    </Region>
-    <Region id="550" name="Audio 2-9.1" start="1221230" length="24114" position="4138615" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="4" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="516" channels="1" master-source-0="516">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-      <extra>
-        <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-      </extra>
-    </Region>
-    <Region id="569" name="Audio 3-1" start="0" length="1203307" position="2849538" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="105" channels="1" master-source-0="105">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-    </Region>
-    <Region id="574" name="Audio 3-1.1" start="0" length="1203307" position="2849538" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="105" channels="1" master-source-0="105">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-      <extra>
-        <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-      </extra>
-    </Region>
-    <Region id="598" name="Audio 3-2" start="0" length="1212289" position="2849538" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="580" channels="1" master-source-0="580">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-    </Region>
-    <Region id="603" name="Audio 3-2.1" start="288347" length="923942" position="3137885" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="580" channels="1" master-source-0="580">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-      <extra>
-        <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-      </extra>
-    </Region>
     <Region id="629" name="Audio 3-3" start="0" length="1347535" position="2849538" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="609" channels="1" master-source-0="609">
       <FadeIn default="yes" active="yes"/>
       <FadeOut default="yes" active="yes"/>
       <Envelope default="yes"/>
-    </Region>
-    <Region id="671" name="Audio 3-4" start="0" length="454263" position="2849538" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="640" channels="1" master-source-0="640">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-    </Region>
-    <Region id="676" name="Audio 3-4.1" start="0" length="454263" position="2849538" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="1" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn" scale-gain="1" source-0="640" channels="1" master-source-0="640">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="no"/>
-      <Envelope default="yes"/>
-      <extra>
-        <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-      </extra>
-    </Region>
-    <Region id="690" name="Audio 3-4.2" start="101769" length="352494" position="3019154" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="4" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn" scale-gain="1" source-0="640" channels="1" master-source-0="640">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="no"/>
-      <Envelope default="yes"/>
-      <extra>
-        <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-      </extra>
     </Region>
     <Region id="722" name="Audio 2-10" start="0" length="2325087" position="2849538" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="556" channels="1" master-source-0="556">
       <FadeIn default="yes" active="yes"/>
       <FadeOut default="yes" active="yes"/>
       <Envelope default="yes"/>
     </Region>
-    <Region id="756" name="Audio 2-10.3" start="1153385" length="542770" position="4545692" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="5" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="556" channels="1" master-source-0="556">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-      <extra>
-        <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-      </extra>
-    </Region>
-    <Region id="878" name="Audio 2-11" start="0" length="476189" position="4545692" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="733" channels="1" master-source-0="733">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-    </Region>
-    <Region id="883" name="Audio 2-11.1" start="0" length="476189" position="4545692" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="6" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn" scale-gain="1" source-0="733" channels="1" master-source-0="733">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="no"/>
-      <Envelope default="yes"/>
-      <extra>
-        <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-      </extra>
-    </Region>
-    <Region id="922" name="Audio 1-4" start="0" length="784703" position="4410000" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="210" channels="1" master-source-0="210">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-    </Region>
-    <Region id="927" name="Audio 1-4.1" start="0" length="784703" position="4410000" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="3" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="210" channels="1" master-source-0="210">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-      <extra>
-        <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-      </extra>
-    </Region>
-    <Region id="952" name="Audio 1-5" start="0" length="808858" position="4410000" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="933" channels="1" master-source-0="933">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-    </Region>
-    <Region id="957" name="Audio 1-5.1" start="67846" length="407077" position="4477846" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="3" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="933" channels="1" master-source-0="933">
+    <Region id="756" name="Audio 2-10.3" start="1153385" length="542770" position="4545692" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="5" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="556" channels="1" master-source-0="556">
       <FadeIn default="yes" active="yes"/>
       <FadeOut default="yes" active="yes"/>
       <Envelope default="yes"/>
@@ -264,20 +75,7 @@
       <FadeOut default="yes" active="yes"/>
       <Envelope default="yes"/>
     </Region>
-    <Region id="1029" name="Audio 1-6.2" start="135692" length="542770" position="4851000" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="1" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="963" channels="1" master-source-0="963">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-      <extra>
-        <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-      </extra>
-    </Region>
-    <Region id="1076" name="Audio 3-5" start="0" length="754479" position="4952769" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="685" channels="1" master-source-0="685">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-    </Region>
-    <Region id="1081" name="Audio 3-5.1" start="339231" length="415248" position="5292000" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="1" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="685" channels="1" master-source-0="685">
+    <Region id="1029" name="Audio 1-6.2" start="135692" length="542770" position="4851000" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="1" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="963" channels="1" master-source-0="963">
       <FadeIn default="yes" active="yes"/>
       <FadeOut default="yes" active="yes"/>
       <Envelope default="yes"/>
@@ -295,19 +93,6 @@
       <FadeOut default="yes" active="yes"/>
       <Envelope default="yes"/>
     </Region>
-    <Region id="1198" name="Audio 3-7" start="0" length="936227" position="6106154" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="1118" channels="1" master-source-0="1118">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-    </Region>
-    <Region id="1203" name="Audio 3-7.1" start="0" length="936227" position="6106154" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="2" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="1118" channels="1" master-source-0="1118">
-      <FadeIn default="yes" active="yes"/>
-      <FadeOut default="yes" active="yes"/>
-      <Envelope default="yes"/>
-      <extra>
-        <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-      </extra>
-    </Region>
     <Region id="1227" name="Audio 3-8" start="0" length="721690" position="6106154" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,Automatic,WholeFile,FadeIn,FadeOut" scale-gain="1" source-0="1209" channels="1" master-source-0="1209">
       <FadeIn default="yes" active="yes"/>
       <FadeOut default="yes" active="yes"/>
@@ -315,12 +100,12 @@
     </Region>
   </Regions>
   <DiskStreams>
-    <AudioDiskstream flags="Recordable" channels="1" playlist="Audio 1.1" speed="1" name="Audio 1" id="69"/>
-    <AudioDiskstream flags="Recordable" channels="1" playlist="Audio 2.1" speed="1" name="Audio 2" id="84"/>
-    <AudioDiskstream flags="Recordable" channels="1" playlist="Audio 3.1" speed="1" name="Audio 3" id="99"/>
+    <AudioDiskstream flags="Recordable" channels="1" playlist="Single riffing" speed="1" name="Single riffing" id="69"/>
+    <AudioDiskstream flags="Recordable" channels="1" playlist="Chords" speed="1" name="Chords" id="84"/>
+    <AudioDiskstream flags="Recordable" channels="1" playlist="Solos" speed="1" name="Solos" id="99"/>
   </DiskStreams>
   <Locations>
-    <Location id="17" name="start" start="0" end="0" flags="IsMark,IsStart" locked="no"/>
+    <Location id="17" name="start" start="135692" end="135692" flags="IsMark,IsStart" locked="no"/>
     <Location id="16" name="end" start="6716769" end="6716769" flags="IsMark,IsEnd" locked="no"/>
     <Location id="54" name="Loop" start="135692" end="6648923" flags="IsAutoLoop" locked="no"/>
     <Location id="55" name="Punch" start="6106154" end="7072962" flags="IsAutoPunch" locked="no"/>
@@ -328,7 +113,7 @@
   <Connections/>
   <Routes>
     <Route flags="MasterOut" default-type="audio" muted="no" soloed="no" phase-invert="no" denormal-protection="no" mute-affects-pre-fader="yes" mute-affects-post-fader="yes" mute-affects-control-outs="yes" mute-affects-main-outs="yes" meter-point="MeterPostFader" order-keys="editor=0:signal=0">
-      <IO name="master" id="18" active="yes" inputs="{Audio 3/out 1,Audio 2/out 1,Audio 1/out 1}{Audio 3/out 2,Audio 2/out 2,Audio 1/out 2}" outputs="{system:playback_1}{system:playback_2}" gain="1.000000000000" iolimits="-1,2,-1,2">
+      <IO name="master" id="18" active="yes" inputs="{Solos/out 1,Chords/out 1,Single riffing/out 1}{Solos/out 2,Chords/out 2,Single riffing/out 2}" outputs="{system:playback_1}{system:playback_2}" gain="0.757396578789" iolimits="-1,2,-1,2">
         <Panner linked="no" link_direction="SameDirection" bypassed="no">
           <Output x="0" y="0"/>
           <Output x="1" y="0"/>
@@ -361,73 +146,481 @@
       </extra>
     </Route>
     <Route default-type="audio" muted="no" soloed="no" phase-invert="no" denormal-protection="no" mute-affects-pre-fader="yes" mute-affects-post-fader="yes" mute-affects-control-outs="yes" mute-affects-main-outs="yes" meter-point="MeterPostFader" order-keys="editor=1:signal=1" mode="Normal" diskstream-id="69">
-      <IO name="Audio 1" id="62" active="yes" inputs="{system:capture_1}" outputs="{master/in 1}{master/in 2}" gain="1.000000000000" iolimits="1,-1,-1,-1">
+      <IO name="Single riffing" id="62" active="yes" inputs="{system:capture_1}" outputs="{master/in 1}{master/in 2}" gain="0.594872951508" iolimits="1,-1,-1,-1">
         <Panner linked="no" link_direction="SameDirection" bypassed="no">
           <Output x="0" y="0"/>
           <Output x="1" y="0"/>
-          <StreamPanner x="0.5" type="Equal Power Stereo" muted="no">
+          <StreamPanner x="0" type="Equal Power Stereo" muted="no">
             <Automation>
-              <AutomationList id="74" default="0.5" min_yval="0" max_yval="1" max_xval="0" state="Off" style="Absolute"/>
+              <AutomationList id="2186" default="0" min_yval="0" max_yval="1" max_xval="0" state="Off" style="Absolute"/>
             </Automation>
-            <controllable name="panner" id="73"/>
+            <controllable name="panner" id="2185"/>
+          </StreamPanner>
+          <StreamPanner x="1" type="Equal Power Stereo" muted="no">
+            <Automation>
+              <AutomationList id="2189" default="1" min_yval="0" max_yval="1" max_xval="0" state="Off" style="Absolute"/>
+            </Automation>
+            <controllable name="panner" id="2188"/>
           </StreamPanner>
         </Panner>
         <controllable name="gaincontrol" id="63"/>
         <Automation>
-          <AutomationList id="64" default="1" min_yval="0" max_yval="2" max_xval="0" state="Off" style="Absolute"/>
+          <AutomationList id="64" default="1.14887332916" min_yval="0" max_yval="2" max_xval="0" state="Off" style="Absolute"/>
         </Automation>
       </IO>
       <controllable name="solo" id="66"/>
       <controllable name="mute" id="67"/>
       <remote_control id="2"/>
+      <Insert type="ladspa" unique-id="1197" count="1">
+        <Redirect active="yes" placement="PreFader">
+          <IO name="Multiband EQ" id="1832" active="yes" inputs="" outputs="" gain="1.000000000000" iolimits="-1,-1,-1,-1">
+            <Panner linked="no" link_direction="SameDirection" bypassed="no"/>
+            <controllable name="gaincontrol" id="1833"/>
+            <Automation>
+              <Automation/>
+            </Automation>
+          </IO>
+          <Automation visible=""/>
+        </Redirect>
+        <ladspa>
+          <port number="0" value="-16.326534"/>
+          <controllable name="50Hz gain (low shelving)" id="1836"/>
+          <port number="1" value="-16.836737"/>
+          <controllable name="100Hz gain" id="1838"/>
+          <port number="2" value="-21.428574"/>
+          <controllable name="156Hz gain" id="1840"/>
+          <port number="3" value="-16.326534"/>
+          <controllable name="220Hz gain" id="1842"/>
+          <port number="4" value="-11.734695"/>
+          <controllable name="311Hz gain" id="1844"/>
+          <port number="5" value="-9.183675"/>
+          <controllable name="440Hz gain" id="1846"/>
+          <port number="6" value="-9.693879"/>
+          <controllable name="622Hz gain" id="1848"/>
+          <port number="7" value="+0.000000"/>
+          <controllable name="880Hz gain" id="1850"/>
+          <port number="8" value="+2.040816"/>
+          <controllable name="1250Hz gain" id="1852"/>
+          <port number="9" value="+3.571429"/>
+          <controllable name="1750Hz gain" id="1854"/>
+          <port number="10" value="+3.571428"/>
+          <controllable name="2500Hz gain" id="1856"/>
+          <port number="11" value="+7.142858"/>
+          <controllable name="3500Hz gain" id="1858"/>
+          <port number="12" value="+8.163266"/>
+          <controllable name="5000Hz gain" id="1860"/>
+          <port number="13" value="+7.142859"/>
+          <controllable name="10000Hz gain" id="1862"/>
+          <port number="14" value="+0.000000"/>
+          <controllable name="20000Hz gain" id="1864"/>
+        </ladspa>
+        <controls>
+          <controllable name="50Hz gain (low shelving)" id="1836" parameter="0"/>
+          <controllable name="100Hz gain" id="1838" parameter="1"/>
+          <controllable name="156Hz gain" id="1840" parameter="2"/>
+          <controllable name="220Hz gain" id="1842" parameter="3"/>
+          <controllable name="311Hz gain" id="1844" parameter="4"/>
+          <controllable name="440Hz gain" id="1846" parameter="5"/>
+          <controllable name="622Hz gain" id="1848" parameter="6"/>
+          <controllable name="880Hz gain" id="1850" parameter="7"/>
+          <controllable name="1250Hz gain" id="1852" parameter="8"/>
+          <controllable name="1750Hz gain" id="1854" parameter="9"/>
+          <controllable name="2500Hz gain" id="1856" parameter="10"/>
+          <controllable name="3500Hz gain" id="1858" parameter="11"/>
+          <controllable name="5000Hz gain" id="1860" parameter="12"/>
+          <controllable name="10000Hz gain" id="1862" parameter="13"/>
+          <controllable name="20000Hz gain" id="1864" parameter="14"/>
+        </controls>
+        <PortAutomation>
+          <port number="0">
+            <AutomationList id="1837" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="1">
+            <AutomationList id="1839" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="2">
+            <AutomationList id="1841" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="3">
+            <AutomationList id="1843" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="4">
+            <AutomationList id="1845" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="5">
+            <AutomationList id="1847" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="6">
+            <AutomationList id="1849" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="7">
+            <AutomationList id="1851" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="8">
+            <AutomationList id="1853" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="9">
+            <AutomationList id="1855" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="10">
+            <AutomationList id="1857" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="11">
+            <AutomationList id="1859" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="12">
+            <AutomationList id="1861" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="13">
+            <AutomationList id="1863" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="14">
+            <AutomationList id="1865" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+        </PortAutomation>
+      </Insert>
+      <Insert type="ladspa" unique-id="1216" count="1">
+        <Redirect active="yes" placement="PostFader">
+          <IO name="GVerb" id="2180" active="yes" inputs="" outputs="" gain="1.000000000000" iolimits="-1,-1,-1,-1">
+            <Panner linked="no" link_direction="SameDirection" bypassed="no"/>
+            <controllable name="gaincontrol" id="2181"/>
+            <Automation>
+              <Automation/>
+            </Automation>
+          </IO>
+          <Automation visible=""/>
+        </Redirect>
+        <ladspa>
+          <port number="0" value="+300.000000"/>
+          <controllable name="Roomsize (m)" id="2192"/>
+          <port number="1" value="+10.015811"/>
+          <controllable name="Reverb time (s)" id="2194"/>
+          <port number="2" value="+0.469388"/>
+          <controllable name="Damping" id="2196"/>
+          <port number="3" value="+0.750000"/>
+          <controllable name="Input bandwidth" id="2198"/>
+          <port number="4" value="+0.000000"/>
+          <controllable name="Dry signal level (dB)" id="2200"/>
+          <port number="5" value="-6.071429"/>
+          <controllable name="Early reflection level (dB)" id="2202"/>
+          <port number="6" value="-12.142860"/>
+          <controllable name="Tail level (dB)" id="2204"/>
+        </ladspa>
+        <controls>
+          <controllable name="Roomsize (m)" id="2192" parameter="0"/>
+          <controllable name="Reverb time (s)" id="2194" parameter="1"/>
+          <controllable name="Damping" id="2196" parameter="2"/>
+          <controllable name="Input bandwidth" id="2198" parameter="3"/>
+          <controllable name="Dry signal level (dB)" id="2200" parameter="4"/>
+          <controllable name="Early reflection level (dB)" id="2202" parameter="5"/>
+          <controllable name="Tail level (dB)" id="2204" parameter="6"/>
+        </controls>
+        <PortAutomation>
+          <port number="0">
+            <AutomationList id="2193" default="75.75" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="1">
+            <AutomationList id="2195" default="7.57499980927" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="2">
+            <AutomationList id="2197" default="0.5" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="3">
+            <AutomationList id="2199" default="0.75" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="4">
+            <AutomationList id="2201" default="-70" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="5">
+            <AutomationList id="2203" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="6">
+            <AutomationList id="2205" default="-17.5" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+        </PortAutomation>
+      </Insert>
       <extra>
-        <GUI color="27325:17592:40927" height="68" shown_editor="yes" shown_mixer="yes" strip_width="Wide">
-          <gain height="68" shown="no"/>
-          <pan height="68" shown="no"/>
+        <GUI color="27325:17592:40927" shown_mixer="yes" height="68" strip_width="Wide" shown_editor="yes">
+          <gain shown="no" height="68"/>
+          <pan shown="no" height="68"/>
         </GUI>
       </extra>
       <alignment style="ExistingMaterial"/>
-      <controllable name="recenable" id="68"/>
+      <controllable name="recenable" id="1654"/>
     </Route>
     <Route default-type="audio" muted="no" soloed="no" phase-invert="no" denormal-protection="no" mute-affects-pre-fader="yes" mute-affects-post-fader="yes" mute-affects-control-outs="yes" mute-affects-main-outs="yes" meter-point="MeterPostFader" order-keys="editor=2:signal=2" mode="Normal" diskstream-id="84">
-      <IO name="Audio 2" id="77" active="yes" inputs="{system:capture_2}" outputs="{master/in 1}{master/in 2}" gain="1.000000000000" iolimits="1,-1,-1,-1">
+      <IO name="Chords" id="77" active="yes" inputs="{system:capture_2}" outputs="{master/in 1}{master/in 2}" gain="0.368366509676" iolimits="1,-1,-1,-1">
         <Panner linked="no" link_direction="SameDirection" bypassed="no">
           <Output x="0" y="0"/>
           <Output x="1" y="0"/>
-          <StreamPanner x="0.5" type="Equal Power Stereo" muted="no">
+          <StreamPanner x="0" type="Equal Power Stereo" muted="no">
             <Automation>
-              <AutomationList id="89" default="0.5" min_yval="0" max_yval="1" max_xval="0" state="Off" style="Absolute"/>
+              <AutomationList id="2249" default="0" min_yval="0" max_yval="1" max_xval="0" state="Off" style="Absolute"/>
             </Automation>
-            <controllable name="panner" id="88"/>
+            <controllable name="panner" id="2248"/>
+          </StreamPanner>
+          <StreamPanner x="1" type="Equal Power Stereo" muted="no">
+            <Automation>
+              <AutomationList id="2252" default="1" min_yval="0" max_yval="1" max_xval="0" state="Off" style="Absolute"/>
+            </Automation>
+            <controllable name="panner" id="2251"/>
           </StreamPanner>
         </Panner>
         <controllable name="gaincontrol" id="78"/>
         <Automation>
-          <AutomationList id="79" default="1" min_yval="0" max_yval="2" max_xval="0" state="Off" style="Absolute"/>
+          <AutomationList id="79" default="0.643474280834" min_yval="0" max_yval="2" max_xval="0" state="Off" style="Absolute"/>
         </Automation>
       </IO>
       <controllable name="solo" id="81"/>
       <controllable name="mute" id="82"/>
       <remote_control id="3"/>
+      <Insert type="ladspa" unique-id="1197" count="1">
+        <Redirect active="yes" placement="PreFader">
+          <IO name="Multiband EQ" id="1867" active="yes" inputs="" outputs="" gain="1.000000000000" iolimits="-1,-1,-1,-1">
+            <Panner linked="no" link_direction="SameDirection" bypassed="no"/>
+            <controllable name="gaincontrol" id="1868"/>
+            <Automation>
+              <Automation/>
+            </Automation>
+          </IO>
+          <Automation visible=""/>
+        </Redirect>
+        <ladspa>
+          <port number="0" value="-6.734692"/>
+          <controllable name="50Hz gain (low shelving)" id="1888"/>
+          <port number="1" value="-6.632654"/>
+          <controllable name="100Hz gain" id="1889"/>
+          <port number="2" value="+5.132656"/>
+          <controllable name="156Hz gain" id="1890"/>
+          <port number="3" value="+4.081632"/>
+          <controllable name="220Hz gain" id="1891"/>
+          <port number="4" value="+1.020407"/>
+          <controllable name="311Hz gain" id="1892"/>
+          <port number="5" value="-1.530612"/>
+          <controllable name="440Hz gain" id="1893"/>
+          <port number="6" value="+3.061224"/>
+          <controllable name="622Hz gain" id="1894"/>
+          <port number="7" value="-6.122450"/>
+          <controllable name="880Hz gain" id="1895"/>
+          <port number="8" value="-0.510203"/>
+          <controllable name="1250Hz gain" id="1896"/>
+          <port number="9" value="-0.510196"/>
+          <controllable name="1750Hz gain" id="1897"/>
+          <port number="10" value="+5.612246"/>
+          <controllable name="2500Hz gain" id="1898"/>
+          <port number="11" value="+6.122450"/>
+          <controllable name="3500Hz gain" id="1899"/>
+          <port number="12" value="+6.122450"/>
+          <controllable name="5000Hz gain" id="1900"/>
+          <port number="13" value="+0.510205"/>
+          <controllable name="10000Hz gain" id="1901"/>
+          <port number="14" value="+0.000000"/>
+          <controllable name="20000Hz gain" id="1902"/>
+        </ladspa>
+        <controls>
+          <controllable name="50Hz gain (low shelving)" id="1888" parameter="0"/>
+          <controllable name="100Hz gain" id="1889" parameter="1"/>
+          <controllable name="156Hz gain" id="1890" parameter="2"/>
+          <controllable name="220Hz gain" id="1891" parameter="3"/>
+          <controllable name="311Hz gain" id="1892" parameter="4"/>
+          <controllable name="440Hz gain" id="1893" parameter="5"/>
+          <controllable name="622Hz gain" id="1894" parameter="6"/>
+          <controllable name="880Hz gain" id="1895" parameter="7"/>
+          <controllable name="1250Hz gain" id="1896" parameter="8"/>
+          <controllable name="1750Hz gain" id="1897" parameter="9"/>
+          <controllable name="2500Hz gain" id="1898" parameter="10"/>
+          <controllable name="3500Hz gain" id="1899" parameter="11"/>
+          <controllable name="5000Hz gain" id="1900" parameter="12"/>
+          <controllable name="10000Hz gain" id="1901" parameter="13"/>
+          <controllable name="20000Hz gain" id="1902" parameter="14"/>
+        </controls>
+        <PortAutomation>
+          <port number="0">
+            <AutomationList id="1872" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="1">
+            <AutomationList id="1873" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="2">
+            <AutomationList id="1874" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="3">
+            <AutomationList id="1875" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="4">
+            <AutomationList id="1876" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="5">
+            <AutomationList id="1877" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="6">
+            <AutomationList id="1878" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="7">
+            <AutomationList id="1879" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="8">
+            <AutomationList id="1880" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="9">
+            <AutomationList id="1881" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="10">
+            <AutomationList id="1882" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="11">
+            <AutomationList id="1883" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="12">
+            <AutomationList id="1884" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="13">
+            <AutomationList id="1885" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="14">
+            <AutomationList id="1886" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+        </PortAutomation>
+      </Insert>
+      <Insert type="ladspa" unique-id="1425" count="1">
+        <Redirect active="yes" placement="PreFader">
+          <IO name="SC1" id="2220" active="yes" inputs="" outputs="" gain="1.000000000000" iolimits="-1,-1,-1,-1">
+            <Panner linked="no" link_direction="SameDirection" bypassed="no"/>
+            <controllable name="gaincontrol" id="2221"/>
+            <Automation>
+              <Automation/>
+            </Automation>
+          </IO>
+          <Automation visible=""/>
+        </Redirect>
+        <ladspa>
+          <port number="0" value="+58.857174"/>
+          <controllable name="Attack time (ms)" id="2224"/>
+          <port number="1" value="+352.142395"/>
+          <controllable name="Release time (ms)" id="2226"/>
+          <port number="2" value="+0.000000"/>
+          <controllable name="Threshold level (dB)" id="2228"/>
+          <port number="3" value="+10.000000"/>
+          <controllable name="Ratio (1:n)" id="2230"/>
+          <port number="4" value="+3.250000"/>
+          <controllable name="Knee radius (dB)" id="2232"/>
+          <port number="5" value="+0.000000"/>
+          <controllable name="Makeup gain (dB)" id="2234"/>
+        </ladspa>
+        <controls>
+          <controllable name="Attack time (ms)" id="2224" parameter="0"/>
+          <controllable name="Release time (ms)" id="2226" parameter="1"/>
+          <controllable name="Threshold level (dB)" id="2228" parameter="2"/>
+          <controllable name="Ratio (1:n)" id="2230" parameter="3"/>
+          <controllable name="Knee radius (dB)" id="2232" parameter="4"/>
+          <controllable name="Makeup gain (dB)" id="2234" parameter="5"/>
+        </controls>
+        <PortAutomation>
+          <port number="0">
+            <AutomationList id="2225" default="101.5" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="1">
+            <AutomationList id="2227" default="401" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="2">
+            <AutomationList id="2229" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="3">
+            <AutomationList id="2231" default="1" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="4">
+            <AutomationList id="2233" default="3.25" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="5">
+            <AutomationList id="2235" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+        </PortAutomation>
+      </Insert>
+      <Insert type="ladspa" unique-id="1216" count="1">
+        <Redirect active="yes" placement="PostFader">
+          <IO name="GVerb" id="2242" active="yes" inputs="" outputs="" gain="1.000000000000" iolimits="-1,-1,-1,-1">
+            <Panner linked="no" link_direction="SameDirection" bypassed="no"/>
+            <controllable name="gaincontrol" id="2243"/>
+            <Automation>
+              <Automation/>
+            </Automation>
+          </IO>
+          <Automation visible=""/>
+        </Redirect>
+        <ladspa>
+          <port number="0" value="+300.000000"/>
+          <controllable name="Roomsize (m)" id="2255"/>
+          <port number="1" value="+6.049485"/>
+          <controllable name="Reverb time (s)" id="2257"/>
+          <port number="2" value="+0.617347"/>
+          <controllable name="Damping" id="2259"/>
+          <port number="3" value="+0.806122"/>
+          <controllable name="Input bandwidth" id="2261"/>
+          <port number="4" value="+0.000000"/>
+          <controllable name="Dry signal level (dB)" id="2263"/>
+          <port number="5" value="-10.960002"/>
+          <controllable name="Early reflection level (dB)" id="2265"/>
+          <port number="6" value="-14.881433"/>
+          <controllable name="Tail level (dB)" id="2267"/>
+        </ladspa>
+        <controls>
+          <controllable name="Roomsize (m)" id="2255" parameter="0"/>
+          <controllable name="Reverb time (s)" id="2257" parameter="1"/>
+          <controllable name="Damping" id="2259" parameter="2"/>
+          <controllable name="Input bandwidth" id="2261" parameter="3"/>
+          <controllable name="Dry signal level (dB)" id="2263" parameter="4"/>
+          <controllable name="Early reflection level (dB)" id="2265" parameter="5"/>
+          <controllable name="Tail level (dB)" id="2267" parameter="6"/>
+        </controls>
+        <PortAutomation>
+          <port number="0">
+            <AutomationList id="2256" default="75.75" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="1">
+            <AutomationList id="2258" default="7.57499980927" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="2">
+            <AutomationList id="2260" default="0.5" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="3">
+            <AutomationList id="2262" default="0.75" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="4">
+            <AutomationList id="2264" default="-70" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="5">
+            <AutomationList id="2266" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="6">
+            <AutomationList id="2268" default="-17.5" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+        </PortAutomation>
+      </Insert>
       <extra>
-        <GUI color="41540:38937:21166" height="68" shown_editor="yes" shown_mixer="yes" strip_width="Wide">
-          <gain height="68" shown="no"/>
-          <pan height="68" shown="no"/>
+        <GUI color="41540:38937:21166" shown_mixer="yes" height="68" strip_width="Wide" shown_editor="yes">
+          <gain shown="no" height="68"/>
+          <pan shown="no" height="68"/>
         </GUI>
       </extra>
       <alignment style="ExistingMaterial"/>
-      <controllable name="recenable" id="83"/>
+      <controllable name="recenable" id="1664"/>
     </Route>
     <Route default-type="audio" muted="no" soloed="no" phase-invert="no" denormal-protection="no" mute-affects-pre-fader="yes" mute-affects-post-fader="yes" mute-affects-control-outs="yes" mute-affects-main-outs="yes" meter-point="MeterInput" order-keys="editor=3:signal=3" mode="Normal" diskstream-id="99">
-      <IO name="Audio 3" id="92" active="yes" inputs="{system:capture_1}" outputs="{master/in 1}{master/in 2}" gain="1.000000000000" iolimits="1,-1,-1,-1">
+      <IO name="Solos" id="92" active="yes" inputs="{system:capture_1}" outputs="{master/in 1}{master/in 2}" gain="0.310394495726" iolimits="1,-1,-1,-1">
         <Panner linked="no" link_direction="SameDirection" bypassed="no">
           <Output x="0" y="0"/>
           <Output x="1" y="0"/>
-          <StreamPanner x="0.5" type="Equal Power Stereo" muted="no">
+          <StreamPanner x="0" type="Equal Power Stereo" muted="no">
             <Automation>
-              <AutomationList id="104" default="0.5" min_yval="0" max_yval="1" max_xval="0" state="Off" style="Absolute"/>
+              <AutomationList id="2283" default="0" min_yval="0" max_yval="1" max_xval="0" state="Off" style="Absolute"/>
             </Automation>
-            <controllable name="panner" id="103"/>
+            <controllable name="panner" id="2282"/>
+          </StreamPanner>
+          <StreamPanner x="1" type="Equal Power Stereo" muted="no">
+            <Automation>
+              <AutomationList id="2286" default="1" min_yval="0" max_yval="1" max_xval="0" state="Off" style="Absolute"/>
+            </Automation>
+            <controllable name="panner" id="2285"/>
           </StreamPanner>
         </Panner>
         <controllable name="gaincontrol" id="93"/>
@@ -438,21 +631,189 @@
       <controllable name="solo" id="96"/>
       <controllable name="mute" id="97"/>
       <remote_control id="4"/>
+      <Insert type="ladspa" unique-id="1197" count="1">
+        <Redirect active="yes" placement="PreFader">
+          <IO name="Multiband EQ" id="1970" active="yes" inputs="" outputs="" gain="1.000000000000" iolimits="-1,-1,-1,-1">
+            <Panner linked="no" link_direction="SameDirection" bypassed="no"/>
+            <controllable name="gaincontrol" id="1971"/>
+            <Automation>
+              <Automation/>
+            </Automation>
+          </IO>
+          <Automation visible=""/>
+        </Redirect>
+        <ladspa>
+          <port number="0" value="+0.000000"/>
+          <controllable name="50Hz gain (low shelving)" id="1974"/>
+          <port number="1" value="+0.000000"/>
+          <controllable name="100Hz gain" id="1976"/>
+          <port number="2" value="+0.000000"/>
+          <controllable name="156Hz gain" id="1978"/>
+          <port number="3" value="+0.000000"/>
+          <controllable name="220Hz gain" id="1980"/>
+          <port number="4" value="+0.000000"/>
+          <controllable name="311Hz gain" id="1982"/>
+          <port number="5" value="+0.000000"/>
+          <controllable name="440Hz gain" id="1984"/>
+          <port number="6" value="+0.000000"/>
+          <controllable name="622Hz gain" id="1986"/>
+          <port number="7" value="+0.000000"/>
+          <controllable name="880Hz gain" id="1988"/>
+          <port number="8" value="+0.000000"/>
+          <controllable name="1250Hz gain" id="1990"/>
+          <port number="9" value="+1.530612"/>
+          <controllable name="1750Hz gain" id="1992"/>
+          <port number="10" value="+7.142858"/>
+          <controllable name="2500Hz gain" id="1994"/>
+          <port number="11" value="+6.632654"/>
+          <controllable name="3500Hz gain" id="1996"/>
+          <port number="12" value="+5.612246"/>
+          <controllable name="5000Hz gain" id="1998"/>
+          <port number="13" value="+3.061224"/>
+          <controllable name="10000Hz gain" id="2000"/>
+          <port number="14" value="+0.000000"/>
+          <controllable name="20000Hz gain" id="2002"/>
+        </ladspa>
+        <controls>
+          <controllable name="50Hz gain (low shelving)" id="1974" parameter="0"/>
+          <controllable name="100Hz gain" id="1976" parameter="1"/>
+          <controllable name="156Hz gain" id="1978" parameter="2"/>
+          <controllable name="220Hz gain" id="1980" parameter="3"/>
+          <controllable name="311Hz gain" id="1982" parameter="4"/>
+          <controllable name="440Hz gain" id="1984" parameter="5"/>
+          <controllable name="622Hz gain" id="1986" parameter="6"/>
+          <controllable name="880Hz gain" id="1988" parameter="7"/>
+          <controllable name="1250Hz gain" id="1990" parameter="8"/>
+          <controllable name="1750Hz gain" id="1992" parameter="9"/>
+          <controllable name="2500Hz gain" id="1994" parameter="10"/>
+          <controllable name="3500Hz gain" id="1996" parameter="11"/>
+          <controllable name="5000Hz gain" id="1998" parameter="12"/>
+          <controllable name="10000Hz gain" id="2000" parameter="13"/>
+          <controllable name="20000Hz gain" id="2002" parameter="14"/>
+        </controls>
+        <PortAutomation>
+          <port number="0">
+            <AutomationList id="1975" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="1">
+            <AutomationList id="1977" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="2">
+            <AutomationList id="1979" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="3">
+            <AutomationList id="1981" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="4">
+            <AutomationList id="1983" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="5">
+            <AutomationList id="1985" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="6">
+            <AutomationList id="1987" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="7">
+            <AutomationList id="1989" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="8">
+            <AutomationList id="1991" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="9">
+            <AutomationList id="1993" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="10">
+            <AutomationList id="1995" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="11">
+            <AutomationList id="1997" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="12">
+            <AutomationList id="1999" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="13">
+            <AutomationList id="2001" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="14">
+            <AutomationList id="2003" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+        </PortAutomation>
+      </Insert>
+      <Insert type="ladspa" unique-id="1216" count="1">
+        <Redirect active="yes" placement="PostFader">
+          <IO name="GVerb" id="2276" active="yes" inputs="" outputs="" gain="1.000000000000" iolimits="-1,-1,-1,-1">
+            <Panner linked="no" link_direction="SameDirection" bypassed="no"/>
+            <controllable name="gaincontrol" id="2277"/>
+            <Automation>
+              <Automation/>
+            </Automation>
+          </IO>
+          <Automation visible=""/>
+        </Redirect>
+        <ladspa>
+          <port number="0" value="+300.000000"/>
+          <controllable name="Roomsize (m)" id="2289"/>
+          <port number="1" value="+6.049485"/>
+          <controllable name="Reverb time (s)" id="2291"/>
+          <port number="2" value="+0.617347"/>
+          <controllable name="Damping" id="2293"/>
+          <port number="3" value="+0.806122"/>
+          <controllable name="Input bandwidth" id="2295"/>
+          <port number="4" value="+0.000000"/>
+          <controllable name="Dry signal level (dB)" id="2297"/>
+          <port number="5" value="-6.317148"/>
+          <controllable name="Early reflection level (dB)" id="2299"/>
+          <port number="6" value="-11.324295"/>
+          <controllable name="Tail level (dB)" id="2301"/>
+        </ladspa>
+        <controls>
+          <controllable name="Roomsize (m)" id="2289" parameter="0"/>
+          <controllable name="Reverb time (s)" id="2291" parameter="1"/>
+          <controllable name="Damping" id="2293" parameter="2"/>
+          <controllable name="Input bandwidth" id="2295" parameter="3"/>
+          <controllable name="Dry signal level (dB)" id="2297" parameter="4"/>
+          <controllable name="Early reflection level (dB)" id="2299" parameter="5"/>
+          <controllable name="Tail level (dB)" id="2301" parameter="6"/>
+        </controls>
+        <PortAutomation>
+          <port number="0">
+            <AutomationList id="2290" default="75.75" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="1">
+            <AutomationList id="2292" default="7.57499980927" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="2">
+            <AutomationList id="2294" default="0.5" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="3">
+            <AutomationList id="2296" default="0.75" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="4">
+            <AutomationList id="2298" default="-70" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="5">
+            <AutomationList id="2300" default="0" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+          <port number="6">
+            <AutomationList id="2302" default="-17.5" min_yval="1.17549435082e-38" max_yval="3.40282346639e+38" max_xval="0" state="Off" style="Absolute"/>
+          </port>
+        </PortAutomation>
+      </Insert>
       <extra>
-        <GUI color="24743:11108:12986" height="68" shown_editor="yes" shown_mixer="yes" strip_width="Wide">
-          <gain height="68" shown="no"/>
-          <pan height="68" shown="no"/>
+        <GUI color="24743:11108:12986" shown_mixer="yes" height="68" strip_width="Wide" shown_editor="yes">
+          <gain shown="no" height="68"/>
+          <pan shown="no" height="68"/>
         </GUI>
       </extra>
       <alignment style="ExistingMaterial"/>
-      <controllable name="recenable" id="98"/>
+      <controllable name="recenable" id="1674"/>
     </Route>
   </Routes>
   <EditGroups/>
   <MixGroups/>
   <Playlists>
-    <Playlist name="Audio 1.1" orig_diskstream_id="69" frozen="no">
-      <Region id="204" name="Audio 1-3.1" start="135692" length="1085539" position="135692" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="174" channels="1" master-source-0="174">
+    <Playlist name="Single riffing" orig_diskstream_id="69" frozen="no">
+      <Region id="204" name="Audio 1-3.1" start="135692" length="1085539" position="135692" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="2.6986489296" source-0="174" channels="1" master-source-0="174">
         <FadeIn default="yes" active="yes"/>
         <FadeOut default="yes" active="yes"/>
         <Envelope default="yes"/>
@@ -460,33 +821,49 @@
           <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
         </extra>
       </Region>
-      <Region id="221" name="Audio 1-3.1" start="135692" length="1085539" position="1221231" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="1" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="174" channels="1" master-source-0="174">
+      <Region id="221" name="Audio 1-3.1" start="135692" length="1085539" position="1221231" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="1" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn" scale-gain="2.6986489296" source-0="174" channels="1" master-source-0="174">
         <FadeIn default="yes" active="yes"/>
+        <FadeOut default="yes" active="no"/>
+        <Envelope default="yes"/>
+        <extra>
+          <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
+        </extra>
+      </Region>
+      <Region id="474" name="Audio 1-3.2" start="135692" length="542769" position="2306769" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="2" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeOut" scale-gain="2.6986489296" source-0="174" channels="1" master-source-0="174">
+        <FadeIn default="yes" active="no"/>
         <FadeOut default="yes" active="yes"/>
         <Envelope default="yes"/>
         <extra>
           <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
         </extra>
       </Region>
-      <Region id="474" name="Audio 1-3.2" start="135692" length="542769" position="2306769" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="2" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="174" channels="1" master-source-0="174">
+      <Region id="2040" name="Audio 1-3.1" start="135692" length="1085539" position="2849538" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="5" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn" scale-gain="2.6986489296" source-0="174" channels="1" master-source-0="174">
         <FadeIn default="yes" active="yes"/>
+        <FadeOut default="yes" active="no"/>
+        <Envelope default="yes"/>
+        <extra>
+          <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
+        </extra>
+      </Region>
+      <Region id="2080" name="Audio 1-3.2" start="135692" length="542769" position="3935077" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="6" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut" scale-gain="2.6986489296" source-0="174" channels="1" master-source-0="174">
+        <FadeIn default="yes" active="no"/>
+        <FadeOut default="yes" active="no"/>
+        <Envelope default="yes"/>
+        <extra>
+          <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
+        </extra>
+      </Region>
+      <Region id="995" name="Audio 1-6.1" start="67846" length="610616" position="4410000" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="3" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeOut" scale-gain="2.37924742699" source-0="963" channels="1" master-source-0="963">
+        <FadeIn default="yes" active="no"/>
         <FadeOut default="yes" active="yes"/>
         <Envelope default="yes"/>
         <extra>
           <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
         </extra>
       </Region>
-      <Region id="995" name="Audio 1-6.1" start="67846" length="610616" position="4410000" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="3" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="963" channels="1" master-source-0="963">
+      <Region id="1045" name="Audio 1-6.2" start="135692" length="542770" position="5020616" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="4" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn" scale-gain="2.37924742699" source-0="963" channels="1" master-source-0="963">
         <FadeIn default="yes" active="yes"/>
-        <FadeOut default="yes" active="yes"/>
-        <Envelope default="yes"/>
-        <extra>
-          <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
-        </extra>
-      </Region>
-      <Region id="1045" name="Audio 1-6.2" start="135692" length="542770" position="5020616" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="id" layer="4" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="963" channels="1" master-source-0="963">
-        <FadeIn default="yes" active="yes"/>
-        <FadeOut default="yes" active="yes"/>
+        <FadeOut default="yes" active="no"/>
         <Envelope default="yes"/>
         <extra>
           <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
@@ -495,26 +872,36 @@
       <Crossfade out="221" in="474" active="yes" follow-overlap="yes" fixed="no" length="1" anchor-point="0" position="2306769">
         <FadeIn>
           <point x="0" y="0"/>
-          <point x="0" y="0.282192"/>
-          <point x="0" y="0.518174"/>
-          <point x="0" y="0.707946"/>
-          <point x="0" y="0.851507"/>
-          <point x="0" y="0.948859"/>
           <point x="1" y="1"/>
         </FadeIn>
         <FadeOut>
           <point x="0" y="1"/>
-          <point x="0" y="0.948859"/>
-          <point x="0" y="0.851507"/>
-          <point x="0" y="0.707946"/>
-          <point x="0" y="0.518174"/>
-          <point x="0" y="0.282192"/>
           <point x="1" y="0"/>
         </FadeOut>
       </Crossfade>
+      <Crossfade out="2080" in="995" active="yes" follow-overlap="yes" fixed="no" length="67846" anchor-point="2" position="4410000">
+        <FadeIn>
+          <point x="0" y="0"/>
+          <point x="11307" y="0.282192"/>
+          <point x="22615" y="0.518174"/>
+          <point x="33923" y="0.707946"/>
+          <point x="45230" y="0.851507"/>
+          <point x="56538" y="0.948859"/>
+          <point x="67846" y="1"/>
+        </FadeIn>
+        <FadeOut>
+          <point x="0" y="1"/>
+          <point x="11307" y="0.948859"/>
+          <point x="22615" y="0.851507"/>
+          <point x="33923" y="0.707946"/>
+          <point x="45230" y="0.518174"/>
+          <point x="56538" y="0.282192"/>
+          <point x="67846" y="0"/>
+        </FadeOut>
+      </Crossfade>
     </Playlist>
-    <Playlist name="Audio 2.1" orig_diskstream_id="84" frozen="no">
-      <Region id="340" name="Audio 2-4.1" start="474923" length="763269" position="474923" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut" scale-gain="1" source-0="317" channels="1" master-source-0="317">
+    <Playlist name="Chords" orig_diskstream_id="84" frozen="no">
+      <Region id="340" name="Audio 2-4.1" start="474923" length="763269" position="474923" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut" scale-gain="2.33932995796" source-0="317" channels="1" master-source-0="317">
         <FadeIn default="yes" active="no"/>
         <FadeOut default="yes" active="no"/>
         <Envelope default="yes"/>
@@ -522,7 +909,7 @@
           <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
         </extra>
       </Region>
-      <Region id="402" name="Audio 2-6.1" start="0" length="610615" position="1221231" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="1" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeOut" scale-gain="1" source-0="379" channels="1" master-source-0="379">
+      <Region id="402" name="Audio 2-6.1" start="0" length="610615" position="1221231" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="1" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeOut" scale-gain="2.35971450806" source-0="379" channels="1" master-source-0="379">
         <FadeIn default="yes" active="no"/>
         <FadeOut default="yes" active="yes"/>
         <Envelope default="yes"/>
@@ -530,7 +917,7 @@
           <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
         </extra>
       </Region>
-      <Region id="461" name="Audio 2-7.1" start="0" length="474924" position="1831846" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="2" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn" scale-gain="1" source-0="408" channels="1" master-source-0="408">
+      <Region id="461" name="Audio 2-7.1" start="0" length="474924" position="1831846" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="2" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn" scale-gain="2.19338607788" source-0="408" channels="1" master-source-0="408">
         <FadeIn default="yes" active="yes"/>
         <FadeOut default="yes" active="no"/>
         <Envelope default="yes"/>
@@ -538,7 +925,7 @@
           <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
         </extra>
       </Region>
-      <Region id="507" name="Audio 2-8.1" start="0" length="542769" position="2306769" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="3" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeOut" scale-gain="1" source-0="467" channels="1" master-source-0="467">
+      <Region id="507" name="Audio 2-8.1" start="0" length="542769" position="2306769" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="3" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeOut" scale-gain="2.1614112854" source-0="467" channels="1" master-source-0="467">
         <FadeIn default="yes" active="no"/>
         <FadeOut default="yes" active="yes"/>
         <Envelope default="yes"/>
@@ -546,7 +933,7 @@
           <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
         </extra>
       </Region>
-      <Region id="727" name="Audio 2-10.2" start="67847" length="1628307" position="2849539" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="4" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="556" channels="1" master-source-0="556">
+      <Region id="727" name="Audio 2-10.2" start="67847" length="1628307" position="2849539" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="4" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="2.28596305847" source-0="556" channels="1" master-source-0="556">
         <FadeIn default="yes" active="yes"/>
         <FadeOut default="yes" active="yes"/>
         <Envelope default="yes"/>
@@ -554,7 +941,7 @@
           <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
         </extra>
       </Region>
-      <Region id="1147" name="Audio 2-12.1" start="0" length="542769" position="5563385" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="5" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="892" channels="1" master-source-0="892">
+      <Region id="2136" name="Audio 2-10.4" start="1153385" length="542769" position="4477846" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="7" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="2.28596305847" source-0="556" channels="1" master-source-0="556">
         <FadeIn default="yes" active="yes"/>
         <FadeOut default="yes" active="yes"/>
         <Envelope default="yes"/>
@@ -562,7 +949,23 @@
           <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
         </extra>
       </Region>
-      <Region id="1160" name="Audio 2-12.1" start="0" length="542769" position="6106154" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="name" layer="6" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="892" channels="1" master-source-0="892">
+      <Region id="2157" name="Audio 2-10.4" start="1153385" length="542769" position="5020615" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="id" layer="8" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="2.28596305847" source-0="556" channels="1" master-source-0="556">
+        <FadeIn default="yes" active="yes"/>
+        <FadeOut default="yes" active="yes"/>
+        <Envelope default="yes"/>
+        <extra>
+          <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
+        </extra>
+      </Region>
+      <Region id="1147" name="Audio 2-12.1" start="0" length="542769" position="5563385" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="5" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeOut" scale-gain="3.51238012314" source-0="892" channels="1" master-source-0="892">
+        <FadeIn default="yes" active="no"/>
+        <FadeOut default="yes" active="yes"/>
+        <Envelope default="yes"/>
+        <extra>
+          <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
+        </extra>
+      </Region>
+      <Region id="1160" name="Audio 2-12.1" start="0" length="542769" position="6106154" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="6" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="3.51238012314" source-0="892" channels="1" master-source-0="892">
         <FadeIn default="yes" active="yes"/>
         <FadeOut default="yes" active="yes"/>
         <Envelope default="yes"/>
@@ -601,8 +1004,8 @@
         </FadeOut>
       </Crossfade>
     </Playlist>
-    <Playlist name="Audio 3.1" orig_diskstream_id="99" frozen="no">
-      <Region id="634" name="Audio 3-3.1" start="0" length="1238193" position="2849539" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeOut" scale-gain="1" source-0="609" channels="1" master-source-0="609">
+    <Playlist name="Solos" orig_diskstream_id="99" frozen="no">
+      <Region id="634" name="Audio 3-3.1" start="0" length="1238193" position="2849539" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="0" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeOut" scale-gain="3.53435397148" source-0="609" channels="1" master-source-0="609">
         <FadeIn default="yes" active="no"/>
         <FadeOut default="yes" active="yes"/>
         <Envelope default="yes"/>
@@ -610,15 +1013,21 @@
           <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
         </extra>
       </Region>
-      <Region id="1112" name="Audio 3-6.1" start="67846" length="610616" position="4952769" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="1" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="1087" channels="1" master-source-0="1087">
+      <Region id="1112" name="Audio 3-6.1" start="67846" length="712385" position="4952769" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="2" sync-position="0" flags="Opaque,DefaultFadeIn,FadeIn,FadeOut" scale-gain="4.14038324356" source-0="1087" channels="1" master-source-0="1087">
         <FadeIn default="yes" active="yes"/>
-        <FadeOut default="yes" active="yes"/>
+        <FadeOut active="yes">
+          <AutomationList id="1622" default="1" min_yval="0" max_yval="2" max_xval="0" state="Off" style="Absolute">
+            <events>0 1
+135691 0
+</events>
+          </AutomationList>
+        </FadeOut>
         <Envelope default="yes"/>
         <extra>
           <GUI waveform-visible="yes" envelope-visible="no" waveform-rectified="no" waveform-logscaled="no"/>
         </extra>
       </Region>
-      <Region id="1232" name="Audio 3-8.1" start="0" length="610615" position="6038308" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="2" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="1" source-0="1209" channels="1" master-source-0="1209">
+      <Region id="1232" name="Audio 3-8.1" start="0" length="610615" position="6038308" ancestral-start="0" ancestral-length="0" stretch="1" shift="1" first_edit="nothing" layer="1" sync-position="0" flags="Opaque,DefaultFadeIn,DefaultFadeOut,FadeIn,FadeOut" scale-gain="3.82256126404" source-0="1209" channels="1" master-source-0="1209">
         <FadeIn default="yes" active="yes"/>
         <FadeOut default="yes" active="yes"/>
         <Envelope default="yes"/>
