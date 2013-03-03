@@ -39,11 +39,7 @@ public class Control : MonoBehaviour {
 		
 	// Use this for initialization
 	void Start ()
-	{
-		// Get rid of the cursor and lock it
-		Screen.lockCursor = true;
-		Screen.showCursor = false;
-		
+	{		
 		this.mainCamera = Camera.main;
 		this.planes = GeometryUtility.CalculateFrustumPlanes(this.mainCamera);
 		this.leftCollider = this.GetColliderPlane(this.planes[0]);

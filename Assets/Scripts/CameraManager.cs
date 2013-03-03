@@ -5,6 +5,7 @@ public class CameraManager : MonoBehaviour {
 	
 #region Class Singleton
 	private static CameraManager m_Instance = null;
+
 	public static CameraManager Instance
 	{
 		get
@@ -12,7 +13,6 @@ public class CameraManager : MonoBehaviour {
 			if(m_Instance == null)
 			{
 				m_Instance = (new GameObject("CameraManager")).AddComponent<CameraManager>();
-				print ("Creating new instance of Camera Manager");
 			}
 			return m_Instance;
 		}
